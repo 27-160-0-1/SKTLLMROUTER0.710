@@ -1,0 +1,64 @@
+=== [noprior] 1/5 linear head (Train only, CPU lsmr) ===
+[cpu-shim] cupy replaced by numpy/scipy (lsmr, damp=sqrt(alpha))
+[features] building train matrix
+[features] building dev matrix
+[gpu] score-ax31-light: rows=1760 features=16414 nnz=1653672 chunks=3 alpha=10.0
+C:\Users\012\SKT LLM\.venv\Lib\site-packages\scipy\sparse\linalg\_isolve\lsmr.py:407: RuntimeWarning: overflow encountered in cast
+  condA = max(maxrbar, rhotemp) / min(minrbar, rhotemp)
+C:\Users\012\SKT LLM\.venv\Lib\site-packages\scipy\sparse\linalg\_isolve\lsmr.py:406: RuntimeWarning: overflow encountered in cast
+  minrbar = min(minrbar, rhobarold)
+[gpu] score-ax31: rows=1760 features=16414 nnz=1653672 chunks=3 alpha=10.0
+[gpu] score-axk1-think: rows=1760 features=16414 nnz=1653672 chunks=3 alpha=10.0
+[gpu] log-cost-ax31-light: rows=1760 features=16414 nnz=1653672 chunks=3 alpha=10.0
+[gpu] log-cost-ax31: rows=1760 features=16414 nnz=1653672 chunks=3 alpha=10.0
+[gpu] log-cost-axk1-think: rows=1760 features=16414 nnz=1653672 chunks=3 alpha=10.0
+[candidate] alpha=10.0 blend=0.9 limit=1000000 final=0.695198863636 fast=0.663068181818 balanced=0.694886363636
+OK: GPU-trained artifact, Dev score=0.695198863636
+=== [noprior] 2/5 augmentation (Train only) ===
+fast: {'safety_ratio': 0.9483333333333334, 'tier_score': '0.668465909091', 'actual_budget_ratio': '1.220972516038', 'model_counts': {'ax31-light': 535, 'ax31': 345, 'axk1-think': 0}}
+balanced: {'safety_ratio': 0.9416666666666667, 'tier_score': '0.698295454545', 'actual_budget_ratio': '1.870550432644', 'model_counts': {'ax31-light': 307, 'ax31': 519, 'axk1-think': 54}}
+premium: {'safety_ratio': 0.875, 'tier_score': '0.744034090909', 'actual_budget_ratio': '3.625057233167', 'model_counts': {'ax31-light': 228, 'ax31': 485, 'axk1-think': 167}}
+OK: augmentation 블록과 재보정된 안전계수를 기록했습니다.
+=== [noprior] 3/5 prior lookup ===
+[inject_prior] prior_lookup removed (no-prior control)
+=== [noprior] 4/5 meta GBM (Train only) ===
+[meta] building train meta-features
+[meta] OOF ridge
+[meta] LOO kNN
+[meta] OOF legacy head
+[meta] X_train (1760, 58)
+[meta] head 0: 31 trees
+[meta] head 1: 42 trees
+[meta] head 2: 43 trees
+[meta] head 3: 72 trees
+[meta] head 4: 67 trees
+[meta] head 5: 75 trees
+[meta] gain head 0: 17 trees
+[meta] gain head 1: 40 trees
+[meta] ordinal m0 t0.25: 40 trees
+[meta] ordinal m0 t0.5: 53 trees
+[meta] ordinal m0 t0.75: 42 trees
+[meta] ordinal m0 t1.0: 41 trees
+[meta] ordinal m1 t0.25: 56 trees
+[meta] ordinal m1 t0.5: 47 trees
+[meta] ordinal m1 t0.75: 61 trees
+[meta] ordinal m1 t1.0: 53 trees
+[meta] ordinal m2 t0.25: 59 trees
+[meta] ordinal m2 t0.5: 53 trees
+[meta] ordinal m2 t0.75: 44 trees
+[meta] ordinal m2 t1.0: 38 trees
+[meta] rank head 0: 10 trees, floor 0.000433
+[meta] rank head 1: 36 trees, floor 0.009756
+[meta] dev verification
+dev final=0.694659090909
+  fast: score=0.670454545455 ratio=1.174846773472 passed=True
+  balanced: score=0.69375 ratio=1.622419566406 passed=True
+  premium: score=0.727840909091 ratio=3.071138499366 passed=True
+OK: meta_gbm 블록과 안전계수를 기록했습니다. build_public_lookup.py를 다시 실행하십시오.
+=== [noprior] 5/5 held-out Dev score (lookup stripped) ===
+[holdout] 880 episodes, lookup stripped=False, safety={'fast': 0.94, 'balanced': 0.8, 'premium': 0.73}
+final=0.694659090909
+  fast: score=0.670454545455 ratio=1.174846773472 passed=True
+  balanced: score=0.69375 ratio=1.622419566406 passed=True
+  premium: score=0.727840909091 ratio=3.071138499366 passed=True
+=== [noprior] DONE ===

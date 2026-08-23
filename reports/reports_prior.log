@@ -1,0 +1,66 @@
+=== [prior] 1/5 linear head (Train only, CPU lsmr) ===
+[cpu-shim] cupy replaced by numpy/scipy (lsmr, damp=sqrt(alpha))
+[features] building train matrix
+[features] building dev matrix
+[gpu] score-ax31-light: rows=1760 features=16414 nnz=1653672 chunks=3 alpha=10.0
+C:\Users\012\SKT LLM\.venv\Lib\site-packages\scipy\sparse\linalg\_isolve\lsmr.py:407: RuntimeWarning: overflow encountered in cast
+  condA = max(maxrbar, rhotemp) / min(minrbar, rhotemp)
+C:\Users\012\SKT LLM\.venv\Lib\site-packages\scipy\sparse\linalg\_isolve\lsmr.py:406: RuntimeWarning: overflow encountered in cast
+  minrbar = min(minrbar, rhobarold)
+[gpu] score-ax31: rows=1760 features=16414 nnz=1653672 chunks=3 alpha=10.0
+[gpu] score-axk1-think: rows=1760 features=16414 nnz=1653672 chunks=3 alpha=10.0
+[gpu] log-cost-ax31-light: rows=1760 features=16414 nnz=1653672 chunks=3 alpha=10.0
+[gpu] log-cost-ax31: rows=1760 features=16414 nnz=1653672 chunks=3 alpha=10.0
+[gpu] log-cost-axk1-think: rows=1760 features=16414 nnz=1653672 chunks=3 alpha=10.0
+[candidate] alpha=10.0 blend=0.9 limit=1000000 final=0.695198863636 fast=0.663068181818 balanced=0.694886363636
+OK: GPU-trained artifact, Dev score=0.695198863636
+=== [prior] 2/5 augmentation (Train only) ===
+fast: {'safety_ratio': 0.9483333333333334, 'tier_score': '0.668465909091', 'actual_budget_ratio': '1.220972516038', 'model_counts': {'ax31-light': 535, 'ax31': 345, 'axk1-think': 0}}
+balanced: {'safety_ratio': 0.9416666666666667, 'tier_score': '0.698295454545', 'actual_budget_ratio': '1.870550432644', 'model_counts': {'ax31-light': 307, 'ax31': 519, 'axk1-think': 54}}
+premium: {'safety_ratio': 0.875, 'tier_score': '0.744034090909', 'actual_budget_ratio': '3.625057233167', 'model_counts': {'ax31-light': 228, 'ax31': 485, 'axk1-think': 167}}
+OK: augmentation 블록과 재보정된 안전계수를 기록했습니다.
+=== [prior] 3/5 prior lookup ===
+[inject_prior] copied prior_lookup: 2 columns, entries [38330, 8861]
+=== [prior] 4/5 meta GBM (Train only) ===
+[meta] building train meta-features
+[meta] OOF ridge
+[meta] LOO kNN
+[meta] OOF legacy head
+[meta] prior column 'axlight-q6k-v2' present for 90.9% of training rows
+[meta] prior column 'qwen2.5-14b-q4km' present for 90.9% of training rows
+[meta] X_train (1760, 85)
+[meta] head 0: 46 trees
+[meta] head 1: 39 trees
+[meta] head 2: 41 trees
+[meta] head 3: 63 trees
+[meta] head 4: 67 trees
+[meta] head 5: 66 trees
+[meta] gain head 0: 28 trees
+[meta] gain head 1: 65 trees
+[meta] ordinal m0 t0.25: 59 trees
+[meta] ordinal m0 t0.5: 67 trees
+[meta] ordinal m0 t0.75: 70 trees
+[meta] ordinal m0 t1.0: 73 trees
+[meta] ordinal m1 t0.25: 70 trees
+[meta] ordinal m1 t0.5: 81 trees
+[meta] ordinal m1 t0.75: 74 trees
+[meta] ordinal m1 t1.0: 81 trees
+[meta] ordinal m2 t0.25: 82 trees
+[meta] ordinal m2 t0.5: 57 trees
+[meta] ordinal m2 t0.75: 52 trees
+[meta] ordinal m2 t1.0: 38 trees
+[meta] rank head 0: 31 trees, floor 0.000433
+[meta] rank head 1: 46 trees, floor 0.009756
+[meta] dev verification
+dev final=0.702727272727
+  fast: score=0.676136363636 ratio=1.143832522867 passed=True
+  balanced: score=0.703125 ratio=1.627624158151 passed=True
+  premium: score=0.737784090909 ratio=3.469368355705 passed=True
+OK: meta_gbm 블록과 안전계수를 기록했습니다. build_public_lookup.py를 다시 실행하십시오.
+=== [prior] 5/5 held-out Dev score (lookup stripped) ===
+[holdout] 880 episodes, lookup stripped=False, safety={'fast': 0.94, 'balanced': 0.8, 'premium': 0.73}
+final=0.702727272727
+  fast: score=0.676136363636 ratio=1.143832522867 passed=True
+  balanced: score=0.703125 ratio=1.627624158151 passed=True
+  premium: score=0.737784090909 ratio=3.469368355705 passed=True
+=== [prior] DONE ===

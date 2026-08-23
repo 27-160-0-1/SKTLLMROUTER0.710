@@ -1,0 +1,254 @@
+{
+  "candidate_scores": {
+    "alpha=10,blend=0.9,limit=1000000": "0.701448863636"
+  },
+  "feature_dimension": 16414,
+  "gpu_fit_diagnostics": [
+    {
+      "backend": "gpu",
+      "chunks": 4,
+      "iterations": 57,
+      "label": "score-ax31-light",
+      "residual_norm": 19.568113620208276,
+      "solver": "cupyx-lsmr",
+      "stop_code": 2
+    },
+    {
+      "backend": "gpu",
+      "chunks": 4,
+      "iterations": 59,
+      "label": "score-ax31",
+      "residual_norm": 18.313203952735577,
+      "solver": "cupyx-lsmr",
+      "stop_code": 2
+    },
+    {
+      "backend": "gpu",
+      "chunks": 4,
+      "iterations": 58,
+      "label": "score-axk1-think",
+      "residual_norm": 15.62538578137046,
+      "solver": "cupyx-lsmr",
+      "stop_code": 2
+    },
+    {
+      "backend": "gpu",
+      "chunks": 4,
+      "iterations": 62,
+      "label": "log-cost-ax31-light",
+      "residual_norm": 28.903949670729798,
+      "solver": "cupyx-lsmr",
+      "stop_code": 2
+    },
+    {
+      "backend": "gpu",
+      "chunks": 4,
+      "iterations": 60,
+      "label": "log-cost-ax31",
+      "residual_norm": 23.40999209995335,
+      "solver": "cupyx-lsmr",
+      "stop_code": 2
+    },
+    {
+      "backend": "gpu",
+      "chunks": 4,
+      "iterations": 61,
+      "label": "log-cost-axk1-think",
+      "residual_norm": 34.507661609952315,
+      "solver": "cupyx-lsmr",
+      "stop_code": 2
+    }
+  ],
+  "report_type": "ossp-learned-router-gpu-training-v1",
+  "train_nnz": 2478581,
+  "training_summary": {
+    "alpha_candidates": [
+      10.0
+    ],
+    "blend_weight_candidates": [
+      0.9
+    ],
+    "content_features_only": true,
+    "context_limit_candidates": [
+      1000000
+    ],
+    "cupy_version": "14.1.1",
+    "dev_input_sha256": "5920f9ea9e3da147aa546659054feb08afb7e11a0e4db6967b293ff79b759abc",
+    "dev_outcomes_sha256": "2d465b736d8cf7bd02a65c95eacf3149447d784bb1efa73b6d406f4a0174f1a6",
+    "gpu_device": "NVIDIA GeForce RTX 4090 Laptop GPU",
+    "guard_ratios": {
+      "balanced": 0.96,
+      "fast": 0.98,
+      "premium": 0.92
+    },
+    "learned_context_limit_chars": 1000000,
+    "legacy_blend_weight": 0.9,
+    "num_dev_episodes": 880,
+    "num_train_episodes": 2640,
+    "ridge_alpha": 10.0,
+    "solver": "cupyx-lsmr",
+    "train_input_sha256": "2b3111fe06960c7e66fd9f365a2974d5058a260964106d68dafae52ae3af73b3",
+    "train_outcomes_sha256": "c94e5d19cbc5f9eeb231ea7610ec0396291f1b3b2a3768d213297e1f8f9389b0",
+    "training_backend": "gpu",
+    "uses_episode_id_or_order": false
+  },
+  "validation_safety_calibration": {
+    "balanced": {
+      "actual_budget_ratio": "1.916736162046",
+      "guard_ratio": 0.96,
+      "model_counts": {
+        "ax31": 465,
+        "ax31-light": 358,
+        "axk1-think": 57
+      },
+      "predicted_budget_ratio": 1.7918103378981094,
+      "safety_ratio": 0.9,
+      "tier_score": "0.705681818182"
+    },
+    "fast": {
+      "actual_budget_ratio": "1.224364891766",
+      "guard_ratio": 0.98,
+      "model_counts": {
+        "ax31": 330,
+        "ax31-light": 549,
+        "axk1-think": 1
+      },
+      "predicted_budget_ratio": 1.1745914510416295,
+      "safety_ratio": 0.9400000000000001,
+      "tier_score": "0.665909090909"
+    },
+    "premium": {
+      "actual_budget_ratio": "3.664895172305",
+      "guard_ratio": 0.92,
+      "model_counts": {
+        "ax31": 442,
+        "ax31-light": 263,
+        "axk1-think": 175
+      },
+      "predicted_budget_ratio": 3.4382956018612476,
+      "safety_ratio": 0.8625,
+      "tier_score": "0.744602272727"
+    }
+  },
+  "validation_score": {
+    "challenge_id": "ossp-2026-llm-router-challenge",
+    "final_score": "0.701448863636",
+    "final_weighted_points_total": "617.275",
+    "policy_id": "ossp-2026-prompt-router-v1",
+    "policy_sha256": "7c892c423da5fa762e7e1a93b9fa071be51e259b65d2b63a5ba434c4342d7a8e",
+    "report_type": "prompt-only-routing-final-score",
+    "schema_version": 1,
+    "score_decimal_places": 12,
+    "score_rounding": "ROUND_HALF_EVEN",
+    "split": "dev",
+    "tier_weights": {
+      "balanced": "0.3",
+      "fast": "0.4",
+      "premium": "0.3"
+    },
+    "tiers": {
+      "balanced": {
+        "budget_limit": "8.762856",
+        "budget_multiplier": "2",
+        "budget_passed": true,
+        "budget_ratio": "1.916736162046",
+        "challenge_id": "ossp-2026-llm-router-challenge",
+        "cost_unit": "credits",
+        "light_baseline_cost": "4.381428",
+        "model_counts": {
+          "ax31": 465,
+          "ax31-light": 358,
+          "axk1-think": 57
+        },
+        "near_budget": true,
+        "num_episodes": 880,
+        "over_budget_zero_applied": false,
+        "policy_id": "ossp-2026-prompt-router-v1",
+        "policy_sha256": "7c892c423da5fa762e7e1a93b9fa071be51e259b65d2b63a5ba434c4342d7a8e",
+        "quality_points_total": "621",
+        "quality_score": "0.705681818182",
+        "report_type": "prompt-only-routing-tier-score",
+        "schema_version": 1,
+        "score_decimal_places": 12,
+        "score_rounding": "ROUND_HALF_EVEN",
+        "selected_generations": 2006,
+        "selected_input_tokens": 2112932,
+        "selected_output_tokens": 656689,
+        "split": "dev",
+        "tier": "balanced",
+        "tier_points_total": "621",
+        "tier_score": "0.705681818182",
+        "token_unit": 1000000,
+        "total_cost": "8.398041489"
+      },
+      "fast": {
+        "budget_limit": "5.476785",
+        "budget_multiplier": "1.25",
+        "budget_passed": true,
+        "budget_ratio": "1.224364891766",
+        "challenge_id": "ossp-2026-llm-router-challenge",
+        "cost_unit": "credits",
+        "light_baseline_cost": "4.381428",
+        "model_counts": {
+          "ax31": 330,
+          "ax31-light": 549,
+          "axk1-think": 1
+        },
+        "near_budget": true,
+        "num_episodes": 880,
+        "over_budget_zero_applied": false,
+        "policy_id": "ossp-2026-prompt-router-v1",
+        "policy_sha256": "7c892c423da5fa762e7e1a93b9fa071be51e259b65d2b63a5ba434c4342d7a8e",
+        "quality_points_total": "586",
+        "quality_score": "0.665909090909",
+        "report_type": "prompt-only-routing-tier-score",
+        "schema_version": 1,
+        "score_decimal_places": 12,
+        "score_rounding": "ROUND_HALF_EVEN",
+        "selected_generations": 2006,
+        "selected_input_tokens": 2114346,
+        "selected_output_tokens": 587158,
+        "split": "dev",
+        "tier": "fast",
+        "tier_points_total": "586",
+        "tier_score": "0.665909090909",
+        "token_unit": 1000000,
+        "total_cost": "5.364466619"
+      },
+      "premium": {
+        "budget_limit": "17.525712",
+        "budget_multiplier": "4",
+        "budget_passed": true,
+        "budget_ratio": "3.664895172305",
+        "challenge_id": "ossp-2026-llm-router-challenge",
+        "cost_unit": "credits",
+        "light_baseline_cost": "4.381428",
+        "model_counts": {
+          "ax31": 442,
+          "ax31-light": 263,
+          "axk1-think": 175
+        },
+        "near_budget": false,
+        "num_episodes": 880,
+        "over_budget_zero_applied": false,
+        "policy_id": "ossp-2026-prompt-router-v1",
+        "policy_sha256": "7c892c423da5fa762e7e1a93b9fa071be51e259b65d2b63a5ba434c4342d7a8e",
+        "quality_points_total": "655.25",
+        "quality_score": "0.744602272727",
+        "report_type": "prompt-only-routing-tier-score",
+        "schema_version": 1,
+        "score_decimal_places": 12,
+        "score_rounding": "ROUND_HALF_EVEN",
+        "selected_generations": 2006,
+        "selected_input_tokens": 2109780,
+        "selected_output_tokens": 898239,
+        "split": "dev",
+        "tier": "premium",
+        "tier_points_total": "655.25",
+        "tier_score": "0.744602272727",
+        "token_unit": 1000000,
+        "total_cost": "16.057474325"
+      }
+    }
+  }
+}
