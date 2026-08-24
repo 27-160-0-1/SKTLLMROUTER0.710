@@ -1502,3 +1502,14 @@ unlike E66's reasoning column this is not public-only.
 
 Deployment note: `build_public_lookup.py` must run AFTER the blend field is set, or the stored
 public rows will disagree with the compute path.
+
+### E70. Per-column blend weights ❌ rejected — (0.25, 0.25) is the argmax of the whole grid
+The correlation table suggested headroom (column A alone reaches corr 0.699 with the true light
+score where the blended stack reads 0.658), and E69 had only tried a single joint weight.  A
+5x4 grid over (w_light, w_mid) at the shipped triple: the shipped (0.25, 0.25) is the exact
+maximum, every neighbour loses (best alternative −0.002).  Marginal correlation does not order
+EV — E42 again.  Also dead on the same table: the mid-proxy ensemble avg(B, C) (corr 0.714 vs
+C alone 0.712), any k1 score blend (no column beats the stack's 0.500), and self-consistency
+as a score substitute (corr 0.37-0.47, well under the stack).
+
+The blend axis is closed with the shipped setting sitting at a verified local optimum.
