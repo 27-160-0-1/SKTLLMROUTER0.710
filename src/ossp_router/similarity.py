@@ -31,47 +31,75 @@ _SPACE = re.compile(r"\s+")
 _GRAM_BINS: Dict[str, int] = {}
 _GRAM_CACHE_LIMIT = 2_000_000
 
-# Content-only source-family heuristics (validated on public Train/Dev).
-_RULETAKER = re.compile(r"\bIf (?:something|someone|the \w+) ")
-_TRUTHFULQA = re.compile(r"^Question: .{5,200}\nA\. ", re.DOTALL)
-_HRMCR_AGE = re.compile(r"한국 나이|선/후배|존댓말")
-_HRMCR_CAL = re.compile(r"음력|양력|윤년|3·1절|생일")
-_DMMATH = re.compile(
-    r"^(?:Solve|Calculate|Simplify|Differentiate|Factor|Expand|Evaluate|"
-    r"What is|Let |Suppose|Divide|Multiply|Put|Sort|Round|Convert|"
-    r"Two letters|Three letters|Four letters|Five letters|Six letters|"
-    r"What comes next|List the prime factors|Is \d|Find the \w+ derivative)"
-)
-_CODE = re.compile(r"\bdef \w+\(|assert f\(")
-_AIME = re.compile(r"\$[^$]+\$")
+# Content-only source-family classifier (E67; see tools/e67_classifier.py for the measurement).
+_F_CODE = re.compile(r"\bdef \w+\(|assert f\(")
+_F_OPT_ABCD = re.compile(r"^[A-D]\. ", re.M)
+_F_OPT_AB = re.compile(r"^[AB]\. ", re.M)
+_F_OPT_AE = re.compile(r"^[A-E]\. ", re.M)
+_F_HANGUL = re.compile(r"[가-힣]")
+_F_HRMCR = re.compile(r"한국 나이|선/후배|존댓말|음력|양력|윤년|3·1절|생일|띠")
+# AIME: LaTeX math, not dollar amounts.  A dollar *amount* is "$12", "$20,000", "$1.5"; LaTeX is
+# "$n$", "$\tfrac{m}{n}$", "$17_b$".  Require a non-digit, non-currency character right after $.
+# A dollar AMOUNT is "$20,000" / "$1.5" / "$12 fee" -- digits then a word boundary.  LaTeX is
+# "$n$", "$\tfrac{m}{n}$", "$12$", "$2 \times 2$" -- the closing $ follows within the same span.
+_F_LATEX = re.compile(r"\$(?![\d,.\s]+\b(?!\$))[^$]{1,80}\$|\\\(|\\\[|\\begin\{|\\frac|\\tfrac|\\sqrt|\\times")
+# deepmind-mathematics: one short line, symbolic.  The whitelist is gone; instead we ask whether
+# the text *looks like* a math expression or a terse math question.
+_F_DM_SYMBOL = re.compile(r"[=*/^()]|\d+/\d+|\bbase \d+\b|\bprime factors\b|\bderivative\b|\bprob(?:ability)?\b|\bsort\b|\bround\b", re.I)
+# deepmind-mathematics idioms a word-problem filter must not veto
+_F_DM_IDIOM = re.compile(
+    r"\bpicked without replacement\b|\bprob of\b|\bin (?:ascending|decreasing|increasing|descending) order\b|"
+    r"\bhow many \w+ are there in\b|\bhow many minutes are there between\b|^total of\b|^rearrange\b|"
+    r"^let [a-z]\b|^suppose\b|\*\*|\bnanometers?\b|\bmillilitres?\b|\bmillennium\b|\bcenturies\b", re.I)
+# gsm8k word problems: people, money, narrative verbs
+_F_WORD_PROBLEM = re.compile(r"\b(?:he|she|they|his|her|their|each|every|per|costs?|buys?|sells?|pays?|earns?|spends?|total|how (?:many|much))\b", re.I)
+# AIME without LaTeX: competition-geometry / combinatorics phrasing, no money
+_F_AIME_PHRASE = re.compile(
+    r"\b(?:regular (?:dodecagon|hexagon|octagon|polygon)|equilateral|convex|quadrants?|diameters?|circumcircle|"
+    r"incircle|unit squares?|lattice|remainder when .{1,60} is divided by|find the number of|"
+    r"relatively prime positive integers|\bm\+n\b|\bm \+ n\b|\\times|\\tfrac|\\frac)", re.I)
+
+
+def classify_family(text: str) -> str:
+    """Assign one of the public source-family labels from prompt content only.
+
+    E67: rebuilt from the data analysis's structural markers.  99.85 % against the true
+    source on the public 2,640 (the previous heuristic: 91.44 %, with an `aime` bucket that
+    was 69 % GSM8K).  Order matters: length first, then unambiguous structure, then the
+    math trio resolved on text.
+    """
+    if len(text) > 6_000:
+        return "longdoc"
+    head = text[:600]
+    if _F_CODE.search(text[:400]):
+        return "code"
+    if len(_F_OPT_ABCD.findall(text)) == 4:
+        return "belebele"
+    if len(_F_OPT_AB.findall(text)) == 2 and len(_F_OPT_AE.findall(text)) == 2:
+        return "truthfulqa"
+    if "\nQuestion:" in text:
+        return "ruletaker"
+    if _F_HANGUL.search(text):
+        return "hrmcr" if _F_HRMCR.search(head) or len(text) < 1_000 else "belebele"
+    # the math trio, resolved on text
+    if _F_LATEX.search(head):
+        return "aime"
+    words = len(text.split())
+    if _F_DM_IDIOM.search(text) and words <= 60:
+        return "dmmath"
+    if words <= 40 and "\n" not in text.strip() and _F_DM_SYMBOL.search(text) and not _F_WORD_PROBLEM.search(text):
+        return "dmmath"
+    if words <= 12 and not _F_WORD_PROBLEM.search(text):
+        return "dmmath"
+    if _F_AIME_PHRASE.search(text) and 25 <= words <= 120 and not re.search(r"\$\d", text):
+        return "aime"
+    return "gsm8k_or_other"
+
 
 FAMILY_NAMES = (
     "code", "hrmcr", "ruletaker", "truthfulqa", "belebele",
     "longdoc", "aime", "dmmath", "gsm8k_or_other",
 )
-
-
-def classify_family(text: str) -> str:
-    """Assign one of the public source-family labels from prompt content only."""
-
-    head = text[:600]
-    if _CODE.search(head):
-        return "code"
-    if _HRMCR_AGE.search(head) or _HRMCR_CAL.search(head[:200]):
-        return "hrmcr"
-    if _RULETAKER.search(head) and " is " in head:
-        return "ruletaker"
-    if _TRUTHFULQA.match(text):
-        return "truthfulqa"
-    if sum("가" <= character <= "힣" for character in head) > 40:
-        return "belebele"
-    if len(text) > 6_000:
-        return "longdoc"
-    if _AIME.search(head) and len(text) < 2_000:
-        return "aime"
-    if _DMMATH.match(head) and len(text) < 400:
-        return "dmmath"
-    return "gsm8k_or_other"
 
 
 def _gram_bin(gram: str) -> int:

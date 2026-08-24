@@ -69,6 +69,10 @@ def main() -> int:
     ap.add_argument("--boot", type=int, default=800)
     ap.add_argument("--seed", type=int, default=7)
     ap.add_argument("--grid", default=None, help="comma-separated safety values to test")
+    ap.add_argument("--scenarios", default=",".join(SCENARIOS),
+                    help="which stresses must show zero busts.  'small' (half-size batches) is the "
+                         "strictest and only matters if the evaluation batch can be much smaller "
+                         "than Dev's 880 -- drop it to see what that conservatism costs")
     ap.add_argument("--write", type=Path, default=None,
                     help="write the chosen triple into this artifact's tier_safety_ratios "
                          "(safety enters allocation only, so no refit is needed)")
@@ -98,6 +102,7 @@ def main() -> int:
     small = [rng.integers(0, n, size=n // 2) for _ in range(a.boot)]
     hit_at = [rng.integers(0, n) for _ in range(a.boot)]
 
+    scen = tuple(x for x in a.scenarios.split(",") if x)
     chosen, rows_out = {}, []
     print(f"[price] {a.artifact.parent.name}: {n} episodes, {a.boot} resamples per scenario")
     for tier in TIERS:
@@ -108,14 +113,14 @@ def main() -> int:
         grid = ([round(x, 3) for x in np.arange(0.50, 1.001, 0.01)]
                 if not a.grid else [float(v) for v in a.grid.split(",")])
         print(f"\n=== {tier} (multiplier {mult}, shipped safety {shipped.get(tier)}) ===")
-        print(f"{'safety':>8}{'ratio':>8}" + "".join(f"{s:>11}" for s in SCENARIOS)
+        print(f"{'safety':>8}{'ratio':>8}" + "".join(f"{s:>11}" for s in scen)
               + f"{'score':>9}{'E[score]':>10}")
         safe_value = None
         for value in grid:
             pf = allocate(ps, pc, mult, value)
             ratio = C[np.arange(n), pf].sum() / C[:, 0].sum()
             busts, ev_plain = {}, 0.0
-            for name in SCENARIOS:
+            for name in scen:
                 samples = small if name == "small" else full
                 bust = 0
                 for k, sample in enumerate(samples):
@@ -140,7 +145,7 @@ def main() -> int:
             if value in (0.55, 0.60, 0.65, 0.70, 0.73, 0.80, 0.85, 0.90, 0.94, 0.98) or worst == 0.0:
                 mark = "  <- 전 시나리오 초과 0" if worst == 0.0 else ""
                 print(f"{value:>8.2f}{ratio:>8.3f}"
-                      + "".join(f"{busts[s]:>10.1%}" + " " for s in SCENARIOS)
+                      + "".join(f"{busts[s]:>10.1%}" + " " for s in scen)
                       + f"{score:>9.4f}{ev:>10.4f}{mark}")
         if safe_value is None:
             raise SystemExit(f"{tier}: no safety ratio on the grid avoids busting")

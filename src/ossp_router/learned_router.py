@@ -252,6 +252,12 @@ class LearnedArtifact:
     augmentation: Optional[RouterAugmentation]
     meta_gbm: Optional["MetaGbm"]
     prior_lookup: Optional[PriorLookup] = None
+    # E69: decision-layer blend of a prior column's own measured score into the final
+    # score row on a lookup hit -- {"weight": w, "columns": {model_id: column_tag}}.
+    # The columns are direct offline measurements of (a proxy for) the model itself and
+    # agree with the true score at corr ~0.70; through the meta features alone the stack
+    # dilutes them to ~0.60.
+    prior_score_blend: Optional[Mapping[str, Any]] = None
 
     @property
     def dimension(self) -> int:
@@ -928,6 +934,7 @@ def parse_artifact(value: Any, base_path: Optional[Path] = None) -> LearnedArtif
         augmentation=_parse_augmentation(value.get("augmentation"), base_path),
         meta_gbm=_parse_meta_gbm(value.get("meta_gbm"), base_path),
         prior_lookup=_parse_prior_lookup(value.get("prior_lookup")),
+        prior_score_blend=value.get("prior_score_blend"),
     )
 
 
@@ -1308,6 +1315,25 @@ def predict_episode_augmented(
             )
     blend = meta.blend_weights[tier]
     final_row = [(1.0 - blend) * a + blend * b for a, b in zip(prod_row, meta_row)]
+    spec = artifact.prior_score_blend
+    if spec and artifact.prior_lookup is not None:
+        # E69: on a prior-lookup hit with a judged score, pull the final score toward the
+        # column's own measurement.  Stdlib only: one sha256 and a dict probe per column.
+        weight = float(spec.get("weight", 0.0))
+        columns = spec.get("columns") or {}
+        if weight > 0.0 and columns:
+            digest = hashlib.sha256(text.encode("utf-8")).hexdigest()
+            by_tag = {column.tag: column for column in artifact.prior_lookup.columns}
+            for model_id, tag in columns.items():
+                column = by_tag.get(str(tag))
+                if column is None or model_id not in MODEL_IDS:
+                    continue
+                entry = column.entries.get(digest)
+                if entry is not None and entry[0] >= 0.0:
+                    position = MODEL_IDS.index(model_id)
+                    final_row[position] = (
+                        (1.0 - weight) * final_row[position] + weight * entry[0]
+                    )
     return _clamp_row(final_row)
 
 

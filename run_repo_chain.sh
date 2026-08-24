@@ -53,6 +53,11 @@ if [ "$MODE" = "baseline" ]; then
 else
   "$PY" -X utf8 tools/splice_prior_column.py --artifact "$ART" --reference "$REF" \
     --column-json colab-label/prior_column_c.json --mode "$MODE" || exit 1
+  # EXTRA_COLUMN appends one more compiled column on top (E66: the reasoning-model length prior)
+  if [ -n "${EXTRA_COLUMN:-}" ]; then
+    "$PY" -X utf8 tools/splice_prior_column.py --artifact "$ART" --reference "$ART" \
+      --column-json "$EXTRA_COLUMN" --mode append || exit 1
+  fi
 fi
 
 echo "=== [$MODE] 4/4 meta GBM + held-out Dev ==="

@@ -1378,3 +1378,127 @@ is precisely the signal being measured.
 `colab-label/e66_think_cost_colab.ipynb`, `think_cost_gate.py`, `make_e66_zip.py` (7.2 MB).
 If the gate fails, the conclusion is that think's cost is irreducibly unpredictable, the safety
 margin cannot be narrowed, and **0.7019 is the ceiling of this structure**.
+
+### E67. Family classifier rebuilt from the data analysis ✅ adopted (as a correctness fix, EV-neutral)
+The analysis measured `similarity.classify_family` at 91.44 % against the true source and put
+every error in a regex: a whitelist on the first word (dmmath -> gsm8k 98), `\$[^$]+\$` matching
+dollar amounts (gsm8k -> aime 76), a proper-noun gap in the ruletaker pattern (40), and the
+ruletaker test running before the length test (babilong -> ruletaker 2).  Its 7-step cascade
+reproduces the recorded provenance 2443/2443, but two steps need `aime-selection.json` and
+`num_generations`, which are not available at routing time.
+
+`tools/e67_classifier.py` is the text-only projection: length first, then unambiguous structure
+(code / 4-option / 2-option / `\nQuestion:` / hangul), then the math trio resolved on text --
+LaTeX that is not a dollar amount -> aime, deepmind idioms -> dmmath, competition-geometry
+phrasing without money -> aime, else gsm8k_or_other.
+
+| classifier | accuracy | `aime` precision | `gsm8k_or_other` precision |
+|---|---:|---:|---:|
+| shipped | 2414/2640 = 91.44 % | 34/110 = 0.309 | 249/388 = 0.642 |
+| **E67** | **2636/2640 = 99.85 %** | **36/36 = 1.000** | 330/331 = 0.997 |
+
+The 4 residuals are genuine boundary cases (three GSM8K items that read like arithmetic, one
+dmmath "nearest to" question).  Shipped in `src/ossp_router/similarity.py` (previous version at
+`similarity.py.e66.bak`); runtime tests unchanged -- the four `test_cli` failures and the
+`fcntl`/`resource` import errors are pre-existing Windows issues, identical with the old file.
+
+**Effect on routing, same chain, same column set, no-bust triple .90/.70/.56:**
+
+| build | held-out | E[score] | family gap moved |
+|---|---:|---:|---|
+| E66b (old classifier) | 0.700739 | 0.700471 | — |
+| E67, 3 seeds | 0.700682 | 0.699944 | dmmath +0.0099 (premium), belebele/code −0.003/−0.004 |
+| E67, 5 seeds | 0.700966 | 0.701276 | |
+
+Stem-grouped paired bootstrap (`tools/e67_paired.py`, 1500 resamples over 753 stem groups,
+both artifacts scored on the same resample):
+3 seeds: mean −0.00053, 90 % CI [−0.0022, +0.0013], P(better) 0.31.
+5 seeds: mean +0.00045, 90 % CI [−0.0011, +0.0022], P(better) 0.67.  **Both noise.**
+
+So the label is now right and the gain lands exactly where the analysis said it would (dmmath),
+but the meta-GBM was already compensating for the old label's noise and gives the fix back
+elsewhere.  Kept because a correct label is the right input regardless, and it removes the
+analysis's "two populations with opposite optimal models in one bucket" hazard for the private set.
+
+### E68. Is there an "extreme item" head to build?  ❌ no -- the ceiling is the features
+E67's gap analysis: on the dmmath/cruxeval items the oracle sends to k1, truth is light ≈0.03 /
+k1 ≈0.96 but the router predicts light 0.30-0.37 / k1 0.74-0.84, halving the predicted
+efficiency.  The hypothesis was a dedicated head for the joint event (light==0 & k1==1; 499/2640
+= 18.9 %, concentrated in dmmath 192 and cruxeval 143).
+
+`tools/e68_extreme_diag.py` on dev:
+
+| signal | AUC for the joint event |
+|---|---:|
+| 1 − P(light≥.25) (E21 ordinal, already shipped) | 0.804 |
+| P(k1≥1) (E21 ordinal) | **0.426** |
+| product | 0.840 |
+| E[k1] − E[light] (what the allocator consumes) | **0.841** |
+| dedicated HistGBM classifier, train->dev (upper bound) | 0.760 |
+
+The shipped signals already reach 0.84 and a dedicated head does worse.  The shrinkage is not a
+head-design problem: `P(k1≥1)` is 0.765 on extremes and 0.782 on everything else -- **the k1
+score head has no discriminative power on this event at all** (AUC 0.43).  The features cannot
+tell which hard items k1 will crack; that is the same information limit E47 found for the
+upgrade-efficiency rank (eff_spearman ≈ 0.07).  No head to build.
+
+### Round summary (E64-E68) and the final candidate
+Safety-margin axis: E64 located it (all of it is think-cost error; oracle costs never bust),
+E65 offsets cannot buy it back, E66 reasoning column moves the RMSE (0.677 -> 0.661) and one
+safety notch (0.52 -> 0.56) but the notch is worth +0.0004 in paired terms, and its private-set
+reach is capped at the public items.  Label axis: E67 fixes it, EV-neutral.  Head axis: E68 --
+nothing to build.
+
+The no-bust triple **.90/.70/.56** came out identical on every build priced this round
+(3-column, 4-column at 74 % and 100 % coverage, E67 at 3 and 5 seeds) and on both scenario
+sets (with and without half-size batches).
+
+**Final candidate: E67 5-seed [A,B,C,D], safety .90/.70/.56 — held-out 0.700966, E[score]
+0.701276, 0 busts in 4,500 tier-resamples.**  Against the shipped 0705 router (0.702727 at a
+triple that busts premium 11 %), that is +0.025 in expectation and −0.002 on the headline.
+
+### E69. Decision-layer prior-score blend ✅ adopted — the round's one real gain
+Step 1 decomposed the remaining gap at the no-bust triple (`tools/e69_decompose.py`, dev):
+predicted/predicted 0.7007; TRUE scores/predicted costs **0.7649**; predicted scores/TRUE
+costs 0.7058.  **93 % of the remaining gap is score error, not cost error** — the mirror of
+E64, which only measured the cost side.  The reliability curve killed recalibration in the
+same run: dev predictions are already near-diagonal (bin 0.3-0.4 realises 0.316), so E67's
+"light predicted 0.30, truth 0.06" was selection-conditioned regression to the mean, not
+miscalibration.
+
+Step 2: the prior columns are direct measurements — column A agrees with the true light score
+at corr 0.699 on dev hits, the 34B column with true mid at 0.724 — but through the meta
+features the stack dilutes them to 0.604 / 0.666.  Cheapest possible use: on a scored lookup
+hit, blend the column's own score into the final score row,
+`ps[m] <- (1-w)·ps[m] + w·col_score`, w=0.25 (unimodal over {0.25,0.5,0.75}, all positive).
+Runtime cost: one sha256 + a dict probe; stdlib.  Shipped as `prior_score_blend` in the
+artifact and ~20 lines in `predict_episode_augmented` (E42's caveat was checked by measuring
+EV, not RMSE).
+
+Step 3 (`tools/e69_blend_modes.py`): the blend fattens premium's realised-ratio tail — the
+**mid** half is responsible (mid-only at 0.56: 4.1 % inflation busts; light-only clean through
+0.54).  Repricing with the blend active moves the triple to **.90/.72/.52** (balanced *gains*
+a notch, premium gives one back).
+
+Final package, `reports/e67_append/learned-router.v1.json`:
+
+| | held-out dev | E[score] | busts @3000 (plain/runaway/inflation) |
+|---|---:|---:|---|
+| previous best (no blend, .90/.70/.56) | 0.700739 | 0.700471 | 0/0/0 |
+| **blend w=0.25, .90/.72/.52** | **0.705114** | **0.704283** | **0/0/0** |
+
+Package-level stem-grouped paired gate (`tools/e69_package_paired.py`, each side at its own
+triple, 1500 resamples): mean **+0.0037**, 90 % CI **[+0.0003, +0.0071]**, P(B>A) 0.960,
+0 busts on either side — the only change this round to clear the adoption rule.
+
+Caveats, recorded: (1) under the strict 4-scenario rule that includes half-size batches,
+premium's zero-bust point is 0.48, not 0.52 — 0.52 is certified on the three E55 scenarios at
+3000 resamples (the E63b precedent) and busts ~0.2 % of half-size batches; if the private
+batch can be far smaller than 880, ship .90/.72/.48 (headline ~0.7025) instead.  (2) w and the
+triple were selected on dev; the paired CI is the guard, and its lower bound is +0.0003, not
+comfortable.  (3) The blend transfers to the private set wherever the prior lookup hits with a
+judged score (columns A and C carry 38k source-rendered entries), and is a no-op on misses —
+unlike E66's reasoning column this is not public-only.
+
+Deployment note: `build_public_lookup.py` must run AFTER the blend field is set, or the stored
+public rows will disagree with the compute path.

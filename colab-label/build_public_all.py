@@ -20,6 +20,7 @@ Usage: PYTHONPATH=src python colab-label/build_public_all.py [--out colab-label/
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import sys
 from collections import Counter
@@ -40,13 +41,22 @@ def main() -> int:
                              ROOT / "data/materialized/dev/inputs.json"])
     ap.add_argument("--gold", type=Path, default=ROOT / "data/gold/gold-answers.v1.json")
     ap.add_argument("--out", type=Path, default=ROOT / "colab-label/bundle/public_all.jsonl")
+    ap.add_argument("--exclude-digests", type=Path, default=None,
+                    help="newline-separated prompt digests to leave out, so a second labelling pass "
+                         "only covers what the first one missed")
     a = ap.parse_args()
 
     gold = json.loads(a.gold.read_text(encoding="utf-8")) if a.gold.exists() else {}
+    skip = set()
+    if a.exclude_digests and a.exclude_digests.exists():
+        skip = {l.strip() for l in a.exclude_digests.read_text(encoding="utf-8").splitlines() if l.strip()}
+        print(f"[public_all] excluding {len(skip)} already-covered prompts")
     rows, fams, with_gold = [], Counter(), 0
     for path in a.inputs:
         for ep in load_input(path).episodes:
             text = episode_text(ep)
+            if hashlib.sha256(text.encode("utf-8")).hexdigest() in skip:
+                continue
             g = gold.get(ep.episode_id)
             family = (g or {}).get("family") or similarity.classify_family(text)
             fams[family] += 1
