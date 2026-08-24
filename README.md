@@ -101,6 +101,25 @@ with room, but it has not been measured there.
 run AFTER the `prior_score_blend` field is set, or the stored rows will disagree with the
 compute path.
 
+## Submission artifact
+
+`src/ossp_router/resources/learned-router-submission.v1.json` (27.8 MB,
+sha256 `7984081c57f2e9a97725b8378aa2b5a405775079c7ec8eac41874f5c04ec0450`) is the deployable:
+the same configuration rebuilt on the **combined public 2,640** per the deployment convention,
+with the public lookup generated after the blend field and verified equal to the compute path
+on the build machine (max diff 0 over 120 episodes x 3 tiers).  Built by `run_deploy_chain.sh`
+on a Colab T4.
+
+Its dev numbers are in-sample (it trains on dev) — the performance claim is always the
+Train-only held-out **0.705114 / expected 0.7043** from `learned-router.v1.json`.
+
+Runtime, measured as a same-machine ratio against a single-fit artifact: 1.31x on the
+lookup-miss path, estimating ~48 s per tier on the official hardware against the 90 s limit.
+Cross-machine note: libm exp/log differences flip an occasional GBM split (12/1350 score
+comparisons at ≤7e-4 between the build machine and a Windows machine); the shipped lookup rows
+pin the public prompts to the builder's answers, so this affects only private-prompt noise,
+consistent with the measured 0.0014 cross-machine spread.
+
 ## Reproducibility
 
 ```bash

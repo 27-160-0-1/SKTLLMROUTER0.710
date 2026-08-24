@@ -1513,3 +1513,33 @@ C alone 0.712), any k1 score blend (no column beats the stack's 0.500), and self
 as a score substitute (corr 0.37-0.47, well under the stack).
 
 The blend axis is closed with the shipped setting sitting at a verified local optimum.
+
+### E71. Submission artifact built on Colab ✅
+`run_deploy_chain.sh`: the full chain on the combined 2,640 (E11's deployment convention),
+prior columns A+B+C+D, meta x3 seeds, then the blend + the .90/.72/.52 triple, then the public
+lookup built AFTER those fields, then a 120-episode lookup-vs-compute equality check.  Built on
+a Colab T4 (sha256 7984081c..., 27.8 MB, lookup 2,640 rows); the on-builder verification passed
+with max diff 0.
+
+Two findings from receiving it back locally:
+
+**Cross-machine float drift is real but harmless.**  Re-verifying the lookup on the Windows
+machine shows 12/1350 score comparisons differing (max 7e-4) and 6 cost comparisons (max 0.5 %
+relative) — the signature of libm exp/log ULP differences occasionally flipping a GBM split,
+not of a stale configuration (a lookup built without the blend would disagree by ~0.1 on most
+hit items).  The lookup ships the builder's own rows, so public prompts are answered
+identically everywhere; private prompts compute live and inherit only this noise, consistent
+with E60's measured 0.0014 cross-machine spread.
+
+**Runtime fits.**  Same-machine ratio against the single-fit reference: 1.31x
+(27,500 vs 21,014 us/episode on the miss path).  Against the prior round's official-hardware
+measurement of ~37 s/tier for a single-fit artifact, that estimates **~48 s/tier against the
+90 s limit**.
+
+Also fixed in passing: pathlib `write_text` on Windows had converted the chain scripts to CRLF
+(Git-Bash tolerates it, Linux bash dies on `$'python\r'`); scripts, bundle and repo normalised
+to LF, and the pitfall matches the data analysis's §7.3-1 CRLF trap.
+
+Local sanity of the received artifact: dev 0.7185 through the full path with every tier inside
+budget (in-sample — the artifact trains on dev; the performance claim remains the Train-only
+held-out 0.705114 / expected 0.7043).
