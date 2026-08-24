@@ -146,7 +146,8 @@ was never implemented there; this line implements it (`ROUTER_META_SEEDS`).
 | `tools/e69_package_paired.py` | stem-grouped paired gate for two (artifact, triple) packages |
 | `tools/e67_classifier.py` | the family-classifier measurement |
 | `analysis/` (in the working line) | full data analysis: 5 tidy CSVs, data dictionary, report |
-| `EXPERIMENT_LOG.md` | every experiment E01-E69, including everything rejected and why |
+| `EXPERIMENT_LOG.md` | every experiment, including everything rejected and why |
+| `docs/PRIOR_PROVENANCE.md` | provenance, licences and SHA-256 for the four offline prior columns |
 
 The label pools (hundreds of MB) are not in the repository; `colab-label/build_pool*.py`
 regenerates them from pinned public sources, and the compiled prior columns
