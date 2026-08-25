@@ -139,6 +139,7 @@ was never implemented there; this line implements it (`ROUTER_META_SEEDS`).
 | path | contents |
 |---|---|
 | `src/ossp_router/` | the runtime (stdlib only) and the shipped artifact |
+| `resources/learned-router-0710.v1.json` | the first commit's 0.7100 build, preserved as shipped — safety .94/.80/.73, no blend; headline 0.709972, expected 0.6719 (premium busts ~1 run in 6) |
 | `run_repo_chain.sh` | the build chain; `EXTRA_COLUMN` appends a compiled prior column |
 | `tools/price_safety.py` | largest zero-bust safety ratio per tier |
 | `tools/bust_probability.py` | pass probability and expected score, with a safety sweep |
