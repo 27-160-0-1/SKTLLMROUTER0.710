@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """E55 - the safety trade-off for the final configuration, priced honestly.
 
 For each candidate triple: the scenario-averaged bootstrap EV and bust rate

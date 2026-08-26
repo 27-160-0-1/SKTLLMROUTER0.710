@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """a08 probe 14: arithmetic cost of a static-embedding representation
 (token-embedding lookup + pooling) for one 880-item tier, measured on this CPU.
 

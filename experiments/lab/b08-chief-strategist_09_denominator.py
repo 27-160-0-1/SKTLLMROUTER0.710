@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """b08 - is the BUDGET DENOMINATOR a lever?  (wide-grid rerun of 07 section 3)
 
 cap = (predicted light total) * mult * safety, but the real cap is

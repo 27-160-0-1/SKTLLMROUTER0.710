@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """a03: how many NOISY labels are worth one clean label?
 
 E41 produced 5,212 self-labelled rows whose per-item score correlation with the

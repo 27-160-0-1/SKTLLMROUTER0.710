@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """a04 / step 12 -- shape of the guard: hard top-K vs soft probability inflation,
 which model column to inflate, and unimodality in K.  Judged by the 880-item
 bootstrap EV at the deployed safety factors (400 draws, seeds 7/17/23).

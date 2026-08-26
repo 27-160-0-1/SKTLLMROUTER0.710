@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """a06 step 11: how far does a PURE partition-mean lookup router get?
 
 Train-fitted per-bucket mean score and per-bucket mean log cost, applied to dev.

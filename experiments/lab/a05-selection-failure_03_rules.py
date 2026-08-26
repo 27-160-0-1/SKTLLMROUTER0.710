@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """a05 step 3: candidate decision rules.  Each rule is a mask/transform applied to
 the DEPLOYED predictions only (no label access at decision time); the resulting
 allocation is scored honestly on the true score/cost, and also on the EB

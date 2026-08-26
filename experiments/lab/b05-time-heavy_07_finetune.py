@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """b05 step 7: fine-tune a small multilingual encoder on the two gains.
 
 The gate demanded by the brief: measure the encoder's OUT-OF-FOLD gain-axis

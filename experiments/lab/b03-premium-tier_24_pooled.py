@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """b03 step 24: pooled-risk premium safety (mean over 3 independent risk pools +
 the 6 shift scenarios), and the final shipped numbers."""
 import sys, pickle

@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """b03 step 4: exact per-item attribution of the premium budget-ratio variance.
 
 Under iid resampling of 880 items, log R = log(mean n_i) - log(mean d_i) with

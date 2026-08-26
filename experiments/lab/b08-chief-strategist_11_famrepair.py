@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """b08 - the last open score-side candidate: a08's family-regex repair (C2/C3),
 measured under the pooled honest bootstrap on top of C1.
 """

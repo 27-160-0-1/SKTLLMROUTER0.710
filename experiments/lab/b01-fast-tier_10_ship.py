@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """The fast-tier policy I would ship, measured end to end.
 
   * k1 banned in the fast tier (measured worth exactly 0.0000 on both row sets)

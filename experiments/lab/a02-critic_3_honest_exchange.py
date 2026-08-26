@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """a02-critic #3.  An HONEST exchange rate, and an honest label-noise budget.
 
 The BRIEF's headline number ("blend the score head toward the truth by lam ->

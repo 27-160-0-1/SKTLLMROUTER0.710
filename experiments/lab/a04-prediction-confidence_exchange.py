@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """a04 / step 5 -- what an HONEST confidence/accuracy improvement is worth.
 
 (a) honest exchange rate: ensemble two independent honest score heads

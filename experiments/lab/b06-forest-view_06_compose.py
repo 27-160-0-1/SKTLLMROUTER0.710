@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """b06 forest-view: adversarial audit of the BRIEF2 s6 candidate list.
 
 C4 (variance re-transformation), C5 (k1 relative-price correction) and C8 (hard

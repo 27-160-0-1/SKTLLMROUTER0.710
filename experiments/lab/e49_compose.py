@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """E49 - compose the confirmed round-1 candidates under the honest protocol."""
 import sys, json
 from pathlib import Path

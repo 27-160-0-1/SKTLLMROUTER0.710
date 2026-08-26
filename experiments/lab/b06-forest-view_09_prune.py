@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """b06 forest-view: the concrete pruning proposal, measured.
 
 Removing gain_alpha and rank_beta deletes 4 of the 22 GBM heads, the 65-node

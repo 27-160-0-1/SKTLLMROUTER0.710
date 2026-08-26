@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """b04 memory-heavy library.
 
 Fast, exact numpy replica of `harness.Lab._knn_family` plus the memory-heavy

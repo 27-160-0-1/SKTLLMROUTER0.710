@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """b03 step 7: a dedicated 'k1 beats mid' head, stacked on the pipeline outputs.
 
 Two forms, both trained ONLY on the train-OOF rows:

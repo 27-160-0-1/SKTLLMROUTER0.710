@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """a14 step 1 -- hierarchical noise model for the label.
 
 score_ij = k_ij / n_i,  k_ij ~ Binomial(n_i, p_ij),  n_i in {2,4}.

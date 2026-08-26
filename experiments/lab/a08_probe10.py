@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """a08 probe 10: is the `aime` bucket really AIME, or GSM8K money problems?
 
 similarity._AIME = r"\$[^$]+\$" matches any two '$' characters, so a word

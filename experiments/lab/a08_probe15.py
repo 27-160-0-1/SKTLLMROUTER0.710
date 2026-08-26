@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """a08 probe 15: does a tail/head+tail kNN window rescue the longdoc family?
 
 Leave-one-out kNN (k=16, similarity weighting, exactly similarity.KnnIndex

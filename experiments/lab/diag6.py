@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """Exchange rate: how much final score does a better score head buy, at several
 cost-model qualities?  score_pred(lam) = (1-lam)*current + lam*true."""
 from __future__ import annotations

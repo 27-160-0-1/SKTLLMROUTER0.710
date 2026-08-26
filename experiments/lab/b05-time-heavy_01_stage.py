@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """b05 step 1: build the instrumented stage and verify it reproduces C1 exactly."""
 import importlib.util, sys, time
 from pathlib import Path

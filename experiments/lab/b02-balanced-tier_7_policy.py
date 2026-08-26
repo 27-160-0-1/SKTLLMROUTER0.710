@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """b02 step 7 - family-posterior policy, mid-ranking anatomy, k1 caps, and the
 candidate balanced policy.
 """

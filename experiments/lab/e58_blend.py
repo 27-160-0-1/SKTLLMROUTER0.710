@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """E58 - re-sweep the post-hoc constants now that the prior columns are in.
 
 The tier blend weights were tuned (E43) for a meta stack without the offline

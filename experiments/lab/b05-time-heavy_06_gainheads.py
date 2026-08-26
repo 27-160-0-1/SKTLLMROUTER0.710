@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """b05 step 6: heads trained DIRECTLY on the decision axis.
 
 Every configuration replaces only arr['gain']; the rest of the b05base stage is

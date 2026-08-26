@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """Pack the E66b Colab bundle: fill the reasoning column's coverage gap.
 
 Carries `reason_covered_digests.txt` so the 1,951 prompts E66 already labelled are skipped and

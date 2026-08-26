@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """a14 step 11 -- EV-optimal safety with the reference allocator, held-out preds."""
 from __future__ import annotations
 import sys

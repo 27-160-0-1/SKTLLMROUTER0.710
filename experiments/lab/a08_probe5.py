@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """a08 probe 5: exact tokenizer vs cheap statistics for input-token estimation.
 
 Uses the locally cached skt/A.X-3.1-Light tokenizer.json (Apache-2.0, the same

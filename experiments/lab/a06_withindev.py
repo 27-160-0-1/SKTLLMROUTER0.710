@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """a06 step 14: apples-to-apples -- train a within-family model on TRAIN, score it
 on DEV, and compare with the deployed E43 held-out dev predictions in the same
 family, same split, same metric."""

@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """a13 / provider view - part 5: how pure are the 9 regex 'families'?
 
 The provider handed us two exact source labels: data/sources/

@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """Smoke test for the gold=None path that crashed E59b.
 
 Drives `run_labels.run_stage` with the mock engine over real `public_all.jsonl` rows -- both

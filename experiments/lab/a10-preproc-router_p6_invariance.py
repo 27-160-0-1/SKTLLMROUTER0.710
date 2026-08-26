@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """a10 P6 - which of the proposed 'reparameterisations' are no-ops?
 
 The brief asks whether the allocator should be fed gains / cost deltas /

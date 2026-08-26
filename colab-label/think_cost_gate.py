@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """Gate for E66: does a reasoning model's output length predict `axk1-think`'s?
 
 E64 located the remaining headroom precisely.  The whole safety margin insures against cost

@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """b05 step 4: extract three text representations for all 2,640 episodes.
 
   static   token-embedding lookup + mean pooling ONLY (no transformer layers).

@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """b08 - E[final] versus P(final >= 0.72): the objective decision, measured.
 
 Direct simulation of the final score over (replicate fit/row-set) x (item resample),

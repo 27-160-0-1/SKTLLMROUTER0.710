@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """a09: score-side post-processing - monotonicity, gain shrinkage, isotonic, OOD shrinkage."""
 from __future__ import annotations
 import sys, time

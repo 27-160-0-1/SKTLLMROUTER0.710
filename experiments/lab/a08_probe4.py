@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """a08 probe 4: what does the kNN representation actually see?
 
 similarity.hashed_counts truncates at TEXT_LIMIT=4,000 chars, HEAD ONLY.

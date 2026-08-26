@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """a11 step 15 - oracle veto frontier: how much is a long-output detector worth,
 and does it stack with the kappa2 relative-price correction?"""
 from __future__ import annotations

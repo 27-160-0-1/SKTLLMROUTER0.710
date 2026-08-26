@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """b06 forest-view: EV is not the objective if the goal is literally 0.72.
 
 The competition pays ONE 880-item sample.  bench2 chooses the safety triple that

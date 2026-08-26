@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """b03 step 12: premium-tier headroom ladder (per-column cost oracles, gain oracles)
 and shift stress of the safety choice.  All evaluated with the honest EV protocol."""
 import sys

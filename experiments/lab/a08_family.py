@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """a08: full-stack test of the REPAIRED family classifier.
 
 The sparse ridge path, the legacy rows and the kNN rows do not depend on the

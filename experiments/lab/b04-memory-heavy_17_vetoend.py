@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """b04 - end-to-end value of a LEARNED long-k1-output veto, under bench2.
 
 a11 measured the ORACLE veto frontier (+0.0041 EV at a 5k-token threshold) and

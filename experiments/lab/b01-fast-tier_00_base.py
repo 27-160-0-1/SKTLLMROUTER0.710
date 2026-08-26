@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """Fast-tier baseline, oracle, latent-p oracle, and what k1 would buy."""
 from __future__ import annotations
 import importlib.util, sys

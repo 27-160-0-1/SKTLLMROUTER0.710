@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """b03 step 13: family-level k1 budget split vs item-level allocation; per-family k1 veto."""
 import sys
 from pathlib import Path

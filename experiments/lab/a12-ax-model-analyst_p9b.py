@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """a12 P9b -- mechanism check: WHY does the rescue blend raise the bootstrap EV?
 Is it more score, or fewer busts?"""
 from __future__ import annotations

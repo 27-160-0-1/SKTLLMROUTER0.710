@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """a10 P3 — what should be fed to the allocator?
 
 Four preprocessing designs, all evaluated with the SAME deployed score/cost

@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """b07-visualiser - render every figure from reports/lab/figs/b07_numbers.json.
 
 Palette: Okabe-Ito (colour-blind safe).  Every bar carries its exact number.

@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """a08 probe 6: num_generations is a hidden multiplier on BOTH tokens and cost.
 
   - is ngen identical across the three models for an episode?

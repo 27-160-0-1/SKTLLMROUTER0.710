@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """a05 step 7:
 (a) posterior-predictive re-estimate of the oracle's label-noise inflation
 (b) global per-model decision-price multiplier (trust-weighted pricing)

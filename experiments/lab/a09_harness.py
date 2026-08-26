@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """a09: exact piecewise-Lagrangian bootstrap harness.
 
 For a given (pred_score, pred_cost) it enumerates every breakpoint of the

@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """a14 step 2 -- fit the joint latent-p model and draw p | observed k.
 
 Model (per stratum = family x num_generations):

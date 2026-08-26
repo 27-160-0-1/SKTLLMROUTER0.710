@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """E46 - exhaustive joint sweep of the 8 post-hoc constants under the honest protocol.
 
 E43 did this with a 3-point grid and a 200-sample bootstrap; the exact-envelope

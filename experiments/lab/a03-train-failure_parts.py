@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """a03: what each learned component actually achieves, and where the fit fails.
 
   parts    ridge-alone vs legacy-alone vs 0.9 blend vs deployed E43 preds

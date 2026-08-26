@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """a11 step 12 - (i) where does the ratio variance live (numerator vs denominator),
 (ii) the kappa correction: fine grid, theory value, matched-budget gain."""
 from __future__ import annotations

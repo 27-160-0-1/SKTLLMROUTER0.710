@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """a10 P2 — is the per-item cost RATIO intrinsically easier to predict than the level?
 
 Cost algebra (exact): c_m = rate_m * (I_m + 4*O_m) / 1e6, rate = 1 / 2.127 / 6.565.

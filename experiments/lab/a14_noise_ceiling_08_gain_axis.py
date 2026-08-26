@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """a14 step 8 -- the honest exchange rate on the ONLY axis that can matter.
 
 Theorem (verified numerically in the header of the report): the Lagrangian

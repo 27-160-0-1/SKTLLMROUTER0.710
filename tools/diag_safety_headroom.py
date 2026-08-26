@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """Why does the safety ratio have to be so low, and what would raising it be worth?
 
 The repriced triple leaves premium at 2.33 of an allowed 4.0 -- 40 % of the budget held back as

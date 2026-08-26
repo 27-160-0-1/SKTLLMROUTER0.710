@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """a11 step 7 - is the per-model cost calibration factor k_j estimable and stable?
 
 k_j = sum(true cost_j) / sum(pred cost_j).  Rule B needs k_j/k_0 to transfer from

@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """b03 step 2: decompose the variance of the PREMIUM budget ratio.
 
 R = N/D = 1 + U/D,   U = sum_i (c_{i,pick_i} - c_{i,0}) >= 0,  D = sum_i c_{i,0}.

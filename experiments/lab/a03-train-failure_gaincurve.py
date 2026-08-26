@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """a03: noise ceiling and learning curve for the quantity the allocator uses -
 the upgrade GAIN (s_mid - s_light and s_k1 - s_mid).
 """

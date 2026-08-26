@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """Variance decomposition of the fast tier's realised budget ratio, and the
 break-even bust probability of the safety insurance."""
 from __future__ import annotations

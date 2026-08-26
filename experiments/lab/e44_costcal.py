@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """E44 — cost re-transformation / calibration.
 
 Measured motivation (diag1/diag5): the runtime exponentiates a log-cost

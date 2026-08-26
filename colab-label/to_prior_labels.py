@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """Convert `run_labels.py` output rows into the row shape `tools/build_prior_lookup.py` consumes.
 
 `run_labels.py` writes {id, family, score, n, out_per_gen, gens:[{text, tokens, correct}]}.

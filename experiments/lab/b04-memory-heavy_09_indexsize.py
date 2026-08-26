@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """b04 - learning curve of the kNN in INDEX SIZE (rows), not in k.
 
 The kNN table is the component that scales directly with memory, but only if

@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """a10 P9 - cost-tail guard + confirmation of the recommended input set.
 
 P8(4): dropping the 3 most expensive realised premium selections cuts the

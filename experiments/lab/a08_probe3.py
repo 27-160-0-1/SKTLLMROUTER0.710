@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """a08 probe 3: (a) honest counterfactual for an exact input-token feature,
 (b) how well cheap statistics / a real tokenizer predict input tokens,
 (c) family-constant instruction offsets (E41 claim) reproduced from our own text.

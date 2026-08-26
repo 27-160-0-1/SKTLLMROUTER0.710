@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """a08 probe 16: is the hidden num_generations multiplier still un-modelled by the
 deployed pipeline?  Regress the deployed dev log-cost / score residual on ngen.
 """

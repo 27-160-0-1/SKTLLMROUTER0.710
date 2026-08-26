@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """Time the heavy (lookup-miss) prediction path for one or more artifacts.
 
 Seed-averaging the meta heads multiplies the exported tree count by the seed count, and the

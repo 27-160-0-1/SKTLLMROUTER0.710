@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """b07-visualiser - the measured anchors for the project-history figure.
 
 Claimed gains are transcribed from EXPERIMENT_LOG.md (each row carries the

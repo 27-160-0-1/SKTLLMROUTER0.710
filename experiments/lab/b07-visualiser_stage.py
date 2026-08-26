@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """b07 - build the bench2 stage once under my own tag (10-fold OOF over Train
 + a train-only fit predicting Dev).  Everything else in b07 reuses it."""
 import sys, time

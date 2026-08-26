@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """a02-critic #2.  Decision-focused re-parameterisation of the EXISTING predictions.
 
 Question: E37 proved the allocator is optimal *given* the predictions.  But the

@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """a14 step 4 -- the honest ceiling, the noise inflation, and the honest
 exchange rate  corr(pred, latent p) -> final score.
 

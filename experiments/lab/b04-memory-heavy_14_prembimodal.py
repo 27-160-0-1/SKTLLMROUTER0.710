@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """b04 - why the premium realised ratio is bimodal across meta-GBM seeds.
 
 Seeds 11 and 51 land in the two modes (3.80 vs 3.43 light-budgets).  Refit both

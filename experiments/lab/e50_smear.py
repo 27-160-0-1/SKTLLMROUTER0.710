@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """E50 - cost re-transformation against the selection-induced cost bias.
 
 Diagnosis (dbg_infl.py).  Write inflation = true_ratio / predicted_ratio at the

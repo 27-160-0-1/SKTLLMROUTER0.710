@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """Is a family-level constant policy as good as the item-level model at 1.25x?
 
 Every family posterior is computed HONESTLY: for the CV rows from the other 9

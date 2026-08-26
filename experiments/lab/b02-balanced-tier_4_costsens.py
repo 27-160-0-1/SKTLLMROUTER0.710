@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """b02 step 4 - how much is cost prediction worth, per tier, under the honest
 protocol (bench2: OOF safety choice, dev scored once)?
 

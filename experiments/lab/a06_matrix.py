@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """a06 step 4: structure of the 3-column score matrix, per family and pooled.
 
 Monotonicity, inversions, cross-model correlation, conditional probabilities,

@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """a12 P6 -- is the deployed gain prediction mis-scaled PER FAMILY?
 
 P5.5 showed the deployed premium tier sends 43 belebele items to k1 where the

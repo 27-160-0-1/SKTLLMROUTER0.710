@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """a06 step 13: paired 880-item bootstrap of the sub-family correction delta.
 
 Same resampling style as the project's EV harness: resample the 880 dev

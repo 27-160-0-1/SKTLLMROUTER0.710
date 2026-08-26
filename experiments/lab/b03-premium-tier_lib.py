@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """b03 shared: premium-tier transforms, all fitted train-only / cross-fit."""
 import sys
 from pathlib import Path
@@ -11,7 +10,6 @@ from harness import Lab, TIERS, MULTS, W, DEPLOYED_CFG, DEPLOYED_EXP
 
 FOLDS = 5
 SEED = 1234
-
 
 def inner_folds(n, folds=FOLDS, seed=SEED):
     return np.random.default_rng(seed).integers(0, folds, size=n)

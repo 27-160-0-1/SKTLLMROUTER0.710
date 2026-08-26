@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """a13 / provider view - part 6: what the cost policy and the budget ladder mean.
 
 - output rate is EXACTLY 4x input rate for all three models => cost factorises

@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """a08: fold-pure per-family residual calibration of the stacked prediction.
 
 The full-stack test (a08_family.py) shows the meta stack already recovers the

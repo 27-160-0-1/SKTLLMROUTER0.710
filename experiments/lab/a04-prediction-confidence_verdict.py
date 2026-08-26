@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """a04 / step 14 -- the fair head-to-head the control demands.
 
 The guard's win at FIXED deployed safety could be nothing but "spend less".

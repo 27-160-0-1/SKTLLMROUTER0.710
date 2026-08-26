@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """A fast-tier-specialised binary head: light-vs-mid only.
 
 The fast tier never buys k1 (measured worth 0.0000 in _09), so its whole decision

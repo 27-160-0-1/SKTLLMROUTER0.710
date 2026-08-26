@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """a10 P4 - fair comparison of allocator-input designs.
 
 Every config is given its OWN EV-optimal safety triple (paired 880-bootstrap,

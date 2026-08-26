@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """a03: learning curves + noise ceiling for the linear (ridge) head.
 
 Exact ridge in the dual (n << d): identical solution to the deployed

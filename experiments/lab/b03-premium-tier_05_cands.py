@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """b03 step 5: C6 rescue / C5 kappa2 / C4 variance-form, measured under bench2."""
 import sys
 from pathlib import Path

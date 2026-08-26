@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """a04 / step 6 -- the cost-side counterpart of the confidence question.
 
 (a) exact additive decomposition of the budget-ratio error

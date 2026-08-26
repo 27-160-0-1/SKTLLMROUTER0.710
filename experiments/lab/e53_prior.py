@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """E53 - the real external difficulty prior, measured under bench2 (stressed safety).
 
 Arms: no prior; full prior; prior masked to 70/50/30% coverage (a private set

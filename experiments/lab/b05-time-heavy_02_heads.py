@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """b05 step 2: buy gain-axis accuracy with training compute.
 
 Every configuration replaces ONLY the two gain heads (arr['gain']); the rest of

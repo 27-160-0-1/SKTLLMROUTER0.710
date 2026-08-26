@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """b04 - the heavy tail of single-item k1 cost, in units of the premium budget.
 
 The premium tier's realised budget ratio was found to be bimodal across meta-GBM

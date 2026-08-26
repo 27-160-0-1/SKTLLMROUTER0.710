@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """a13 / provider view - part 12: does per-model cost calibration reduce the
 BUST RISK (not just the dev point score)?
 

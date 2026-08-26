@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """b02 step 1 - baselines, compositions, EB labels, family-posterior policy.
 
 Answers: at 2.0x, does the *expected*-score optimum spread on mid or concentrate

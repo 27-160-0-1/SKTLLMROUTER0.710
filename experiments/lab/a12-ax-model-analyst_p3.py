@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """a12 P3 -- (a) where k1 is WORSE than mid, and is it real or label noise?
              (b) latent-ability structure: single difficulty + model ability, or
                  genuine model-specific competencies?

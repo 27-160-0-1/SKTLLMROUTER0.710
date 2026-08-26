@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """a04 / step 13-fast -- cheap version of the E32/E39 control (150 draws, 1 seed,
 coarse safety grid) so a verdict exists even if the full run is still going.
 Same question: does the targeted guard beat what the global safety scalar can

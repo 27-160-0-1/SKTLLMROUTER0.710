@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """a06 step 7: the decisive question -- how much WITHIN-family score signal exists?
 
 For every family, fit a small GBM on the 35 interpretable features with 5-fold

@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """b02 step 3 - which predictor would let us concentrate on k1 safely?
 
 Same fixed-count frontier as step 2, but the ranking keys are built from the

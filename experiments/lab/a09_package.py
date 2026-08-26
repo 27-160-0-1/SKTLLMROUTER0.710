@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """a09: final package - rule-based safety (bust<=1%), per-tier smearing, 5 splits."""
 from __future__ import annotations
 import sys

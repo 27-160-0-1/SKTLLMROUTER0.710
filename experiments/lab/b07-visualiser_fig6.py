@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """b07-visualiser figure 6 - project history, claimed gain vs measured gain.
 
 Claimed gains are TRANSCRIBED from EXPERIMENT_LOG.md and each carries the metric

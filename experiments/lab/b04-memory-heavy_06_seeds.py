@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """b04 - across-fit dispersion of the realised budget ratio, and what averaging buys.
 
 bench2's bootstrap resamples ITEMS with the fitted model held fixed, so it cannot

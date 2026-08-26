@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """a12 P3b -- clean, fit-free latent structure of the 3x3 score matrix.
 
 Because the generations of different models are independent, for m != m'

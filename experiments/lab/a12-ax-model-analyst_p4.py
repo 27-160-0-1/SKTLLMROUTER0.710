@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """a12 P4 -- what the model profile implies for the allocator.
 
 Uses reports/lab/dev_preds_e43.npz (deployed E43 predictions on held-out dev)

@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """b04 - cascade / per-family specialisation: is there enough data per family?
 
 Measures (a) how many labelled rows each family actually has, (b) whether a

@@ -7,7 +7,8 @@ set -u
 MODE="${1:-replace}"
 ROOT="$(cd "$(dirname "$0")" && pwd)"
 cd "$ROOT"
-PY="/c/Users/012/SKT LLM/.venv/Scripts/python.exe"
+# 원래는 개발 기계의 venv 절대경로가 박혀 있었고 사용자 이름을 노출했다.
+PY="${ROUTER_PY:-python3}"
 export PYTHONPATH="$ROOT/src"
 export PYTHONUTF8=1
 export OMP_NUM_THREADS=2

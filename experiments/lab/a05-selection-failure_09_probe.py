@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """a05 step 9: is the mid-vs-light decision doing ANY work?
 (a) monotonicity of realised gain across predicted-gain deciles among the picks
 (b) counterfactual: keep the deployed per-family mid budget, reorder within family

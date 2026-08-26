@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """Where does the 0.10 gap to the oracle live?  Counterfactual ablations."""
 from __future__ import annotations
 import sys

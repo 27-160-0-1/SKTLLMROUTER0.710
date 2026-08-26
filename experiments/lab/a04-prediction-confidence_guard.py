@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """a04 / step 9 -- evaluate the targeted tail guard.
 
 Proposal: train a *rare-event* classifier for "this prompt makes the model run

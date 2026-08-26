@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """b04 - can MORE CAPACITY buy the long-k1-output detector a11 asked for?
 
 a11 §4: an oracle veto on items whose k1 output exceeds 5k tokens/generation is

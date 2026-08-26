@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """a09: (1) cost-side exchange rate, (2) split-robust comparison of the smearing family,
    (3) per-tier kappa recommendation."""
 from __future__ import annotations

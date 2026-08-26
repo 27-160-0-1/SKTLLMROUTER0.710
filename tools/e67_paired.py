@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """Paired comparison of two artifacts on Dev under the no-bust triple.
 
 A single Dev number hides whether a +0.0005 is one item flipping.  This resamples Dev and

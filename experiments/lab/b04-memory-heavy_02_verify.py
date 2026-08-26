@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """b04 step 2 - prove the vectorised kNN replica is bit-equal to the shipped one."""
 import sys, time
 from pathlib import Path

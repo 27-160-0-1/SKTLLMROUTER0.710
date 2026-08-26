@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """a08 probe 9: audit + repair of the regex family classifier.
 
 The `gsm8k_or_other` bucket turns out to be a *catch-all* holding real GSM8K

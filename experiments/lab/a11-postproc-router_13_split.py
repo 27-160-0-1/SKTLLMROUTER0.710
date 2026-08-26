@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """a11 step 13 - split-half validation of the kappa2 (k1 relative price) gain.
 
 The gain is measured at a MATCHED realised budget ratio, inside each half of a

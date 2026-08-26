@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """a12 P8 -- the RESCUE reconstruction of the k1 score.
 
 P1.3 showed that conditional on the mid outcome, k1's behaviour is almost a

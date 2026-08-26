@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """a06 step 6: honest counterfactual for a SUB-FAMILY refinement.
 
 The correction is estimated on TRAIN only (sub-family mean minus 9-family mean,

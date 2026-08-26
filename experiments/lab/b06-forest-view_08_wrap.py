@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """b06 forest-view: closing diagnostics.
 
   1. Where does the oracle-partition advantage live -- score side or cost side?

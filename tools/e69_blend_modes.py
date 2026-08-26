@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """E69 step 3 -- which half of the blend destabilises premium?
 
 With the w=0.25 blend on both columns, premium no longer certifies zero-bust anywhere on the

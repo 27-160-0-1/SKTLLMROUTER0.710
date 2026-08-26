@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """A01 Q4c: honest bust probability at n=880, and under the organiser's own
 documented dev->private cost inflation (baselines/README.md: hash-regex premium
 dev ratio 3.985 -> private ~4.2, i.e. x1.054)."""

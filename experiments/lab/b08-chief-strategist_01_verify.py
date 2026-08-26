@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """b08 chief strategist - verification pass 1.
 
 Reproduce the two BRIEF2 reference stages and the disputed dev fast-tier margin.

@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """a03: cross the score head and the cost head of the plain ridge with those of
 the deployed E43 stack, to find out which half is responsible for the deployed
 stack scoring higher despite a LOWER score correlation.

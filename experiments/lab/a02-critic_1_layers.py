@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """a02-critic #1.  How much information does the 58-feature meta stack actually
 carry beyond a 9-row family lookup table?  And how entangled are the cost
 model's bias and the 'safety scalar'?

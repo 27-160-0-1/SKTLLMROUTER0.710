@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """a04 / step 2 -- where does confidence collapse?
 
 Builds the artifact's own OOD signal (kNN top-1 cosine similarity of each dev

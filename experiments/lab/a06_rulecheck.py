@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """a06 step 9: robustness of the sub-family discriminators + leakage check.
 
 Which prompt-only predicate best separates true-AIME from the GSM8K money

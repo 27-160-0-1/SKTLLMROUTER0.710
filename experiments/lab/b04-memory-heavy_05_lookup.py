@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """b04 - value of a prompt-hash lookup table, as a function of coverage.
 
 A lookup entry that carries the *outcomes* of a public item turns that item's

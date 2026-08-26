@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """b06 forest-view: (a) side-ceilings that BOUND the round-1 candidate list,
 (b) one-at-a-time sensitivity of EV and dev to each of the 8 post-hoc constants.
 

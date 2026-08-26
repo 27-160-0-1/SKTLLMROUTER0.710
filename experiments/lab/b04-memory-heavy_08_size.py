@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """b04 - what the memory budget is actually spent on today, and what each
 memory-heavy option would cost.  Everything here is measured, not estimated."""
 import json, sys
@@ -12,7 +11,6 @@ lib = importlib.import_module("b04-memory-heavy_lib")
 
 ROOT = Path(".")
 RES = ROOT / "src/ossp_router/resources"
-
 
 def mb(x):
     return x / 1024 / 1024

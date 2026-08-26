@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """Write bundle/public_all.jsonl: every public Train+Dev prompt, verbatim.
 
 `build_pool.py` renders items *from the public sources*, which reaches only ~74 % of the

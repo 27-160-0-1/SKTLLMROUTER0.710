@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """Add (or substitute) a prior column in an artifact, reusing the already-compiled columns.
 
 `build_prior_lookup.py` compiles every column from raw label files, but the raw labels for

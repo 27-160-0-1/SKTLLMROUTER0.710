@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """Re-price the per-tier safety ratios against a no-bust requirement.
 
 A tier that exceeds its budget multiplier scores 0, so when the requirement is "must not bust"

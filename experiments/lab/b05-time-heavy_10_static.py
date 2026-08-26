@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """b05 step 10: the representation that ACTUALLY fits the container.
 
 Step 8 measured the arithmetic: a token-embedding lookup + mean pool over the

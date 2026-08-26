@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """Build data/combined/{inputs,outcomes}.json = train + dev in protocol format."""
 import json, sys
 from pathlib import Path

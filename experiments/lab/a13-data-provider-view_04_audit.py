@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """a13 / provider view - part 4: operator-audit robustness + truncation oracle.
 
 A  Permutation audit.  The rules say the operator may re-run the router with

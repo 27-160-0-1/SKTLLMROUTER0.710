@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """a02-critic #10.  Seven episodes decide the premium tier.  Who are they, is the
 event predictable, and what is a veto worth?
 """

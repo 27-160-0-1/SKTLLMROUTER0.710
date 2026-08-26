@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """Why do TRAIN-OOF and DEV disagree about item-level vs family-only?
 
 Measures the decision-relevant statistic (within-family AUC of the mid-light gain,

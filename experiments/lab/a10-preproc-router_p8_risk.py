@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """a10 P8 - the safety scalar measured on HELD-OUT predictions.
 
 E39/E43 chose .98/.87/.85 from a bust curve computed on 2,640 CV predictions.

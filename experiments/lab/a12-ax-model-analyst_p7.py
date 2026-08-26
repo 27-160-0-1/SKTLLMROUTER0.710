@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """a12 P7 -- the upgrade profile in the ALLOCATOR'S OWN CURRENCY.
 
 Correction to P1.8: the budget denominator is the light cost of the WHOLE batch,

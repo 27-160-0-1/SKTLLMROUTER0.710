@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """b02 step 8 - matched-realised-budget comparison (risk dimension removed).
 
 For every policy sweep the safety scalar on a fine grid, record (realised ratio,

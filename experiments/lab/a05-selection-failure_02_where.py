@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """a05 step 2: WHERE the loss lives -- per family, per realised-score pattern,
 wasted-budget accounting, and a policy-level (re-solved) Shapley of the gap."""
 from __future__ import annotations

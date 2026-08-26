@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """a06 step 12: realised group-level upgrade efficiency (score units per
 light-budget), for the 11 sub-families, on train and dev, plus what the
 deployed allocator actually buys at the premium tier."""

@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """a04 / step 3 -- rebuild the 12 ordinal heads honestly (train -> dev) and
 measure the predicted score DISTRIBUTION, its calibration and its monotonicity.
 

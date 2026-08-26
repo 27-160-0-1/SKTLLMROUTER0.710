@@ -1,18 +1,21 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """A01: re-price the per-tier safety ratio using HONEST (train-only holdout)
 predictions.  E39 priced the same curve with CV / in-sample predictions.
 880-item bootstrap; 'x1.054' = the organiser's own documented dev->private
 cost drift (baselines/README.md: hash-regex premium 3.985 dev -> ~4.2 private)."""
 import sys
+import os
 from pathlib import Path
 import numpy as np
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import labdata as L
-SP = Path(r"C:/Users/PJ05/AppData/Local/Temp/claude/C--portable-skt-LLM1-LLM-ROUTE-0-7000/377d7fd8-9983-4bec-bb08-163cc405f7a3/scratchpad")
+# 이 감사 스크립트가 읽는 중간 산출물의 위치. 원래는 개발 기계의 스크래치 경로가
+# 하드코딩되어 있었고, 그 경로가 사용자 이름을 노출했다. 환경변수로 받고
+# 저장소 안의 재생성 가능한 위치를 기본값으로 둔다.
+SP = Path(os.environ.get("A01_SCRATCH", "experiments/lab"))
 tr, dv = L.load_all()
 NB = 400
 rng = np.random.default_rng(101)

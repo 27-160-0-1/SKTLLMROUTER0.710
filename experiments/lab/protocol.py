@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """The honest end-to-end evaluation protocol used by every lab experiment.
 
     1. 5-fold CV inside Train (1,760) -> out-of-fold predictions

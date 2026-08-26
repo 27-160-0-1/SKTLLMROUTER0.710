@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """Turn the locally-generated per-item labels into router features.
 
 `local-llm/run_llama.py` scores public benchmark items with an open-weight model

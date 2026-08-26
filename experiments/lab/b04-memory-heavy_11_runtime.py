@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """b04 - runtime cost of the memory-heavy kNN options, in the units the stdlib
 runtime actually pays: number of (posting, multiply-add) operations per query.
 

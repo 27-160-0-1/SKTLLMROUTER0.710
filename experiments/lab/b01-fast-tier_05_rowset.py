@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """Are the TRAIN rows intrinsically harder, or is the CV model just weaker?
 
 Same 880-row fit set, two hold-out row sets (the other train half, and dev).

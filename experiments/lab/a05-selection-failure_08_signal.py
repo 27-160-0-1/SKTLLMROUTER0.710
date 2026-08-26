@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """a05 step 8: how much of the gain signal is family-level vs item-level?
 Also verifies the two allocator invariances analytically claimed in the report."""
 from __future__ import annotations

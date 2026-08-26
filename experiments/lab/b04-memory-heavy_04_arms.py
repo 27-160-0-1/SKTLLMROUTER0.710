@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """b04 - memory-heavy arms measured under the bench2 protocol.
 
 usage:  python b04-memory-heavy_04_arms.py ARM [ARM ...]

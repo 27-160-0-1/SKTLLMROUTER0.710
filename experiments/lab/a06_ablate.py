@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """a06 step 8: (i) ablate the sub-family counterfactual split by split,
 (ii) test shrinking the predicted score to the family mean inside the
 families that have no measurable within-family signal.

@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """a09: counterfactual - what if the INPUT-token part of the cost were exact?
 
 BRIEF: input tokens are predictable to dev R2=0.9985 from cheap text stats, and are ~50% of

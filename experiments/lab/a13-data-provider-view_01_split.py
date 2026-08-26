@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """a13 / provider view — part 1.
 
 Q1  Are train and dev i.i.d. draws from one pool?  (family counts, score means,

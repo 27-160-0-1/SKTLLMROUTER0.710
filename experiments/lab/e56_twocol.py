@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """E56 - does a second, stronger model column pay?
 
 Column A: skt/A.X-3.1-Light Q6_K (the organiser's own ax31-light).

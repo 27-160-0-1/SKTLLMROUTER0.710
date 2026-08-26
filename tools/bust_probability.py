@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """Per-tier bust probability and expected score for a built artifact.
 
 A tier scores 0 outright if its realised cost ratio exceeds the budget multiplier, so the safety

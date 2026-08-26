@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """The fast tier's binding constraint is the realised budget ratio.  Decompose it.
 
   ratio - 1 = (sum of TRUE extra cost over the upgraded items) / (TRUE light total)

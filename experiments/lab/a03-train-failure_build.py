@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """a03: build the exact E43 feature matrix (30 dense + 8192 word + 8192 char)
 for train and dev, plus targets / families / ngen, and cache to the scratchpad.
 

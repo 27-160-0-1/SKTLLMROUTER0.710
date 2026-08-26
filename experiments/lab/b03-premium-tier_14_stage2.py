@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """b03: replicate CV stage with a different fold seed (dev arr is fold-independent)."""
 import sys, pickle, time
 from pathlib import Path

@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """A01 Q5: prove the runtime decision for an episode does not depend on its
 position in the batch, its episode_id, or the declared split."""
 import json, sys, random

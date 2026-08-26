@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """a08 probe 7: does the deployed pipeline already know that `gsm8k_or_other`
 is TWO sources?  (ngen=4 easy vs ngen=2 hard)  And what is a correct split worth?
 

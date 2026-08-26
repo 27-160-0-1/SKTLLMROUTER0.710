@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """a03: an HONEST exchange rate for score-head quality.
 
 The BRIEF's exchange-rate table blends the predictions toward the *realised*

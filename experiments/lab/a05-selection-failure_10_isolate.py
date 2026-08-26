@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """a05 step 10: what is the ITEM-LEVEL part of each gain head worth today?
 Replace one gain by its within-family mean (killing all item-level content of that
 decision) and re-allocate."""

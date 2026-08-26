@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """b08 - the ROTATION-EV criterion.
 
 bench2's bootstrap prices ONLY item-sampling variance around a fit-averaged

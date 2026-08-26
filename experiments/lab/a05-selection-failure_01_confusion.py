@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """a05 step 1: deployed-vs-oracle confusion matrix per tier + loss attribution
 to each cell, plus an exact 3-factor Shapley decomposition of the per-item loss
 into (i) score-prediction error, (ii) cost-prediction error, (iii) budget

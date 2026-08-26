@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """a02-critic #6.  Honest per-layer ablation of the deployed stack.
 
 Uses the TRAIN-ONLY artifact in reports/holdout_local/ (num_train_episodes=1760)

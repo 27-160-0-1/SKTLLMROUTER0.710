@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """a06 step 15: does the within-family dense model actually buy final score?
 
 Blend b of (per-family GBM on the 35 interpretable features, trained on train)

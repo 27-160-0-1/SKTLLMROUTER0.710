@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """a04 / step 10 -- does the targeted tail guard unblock score-side improvement?
 
 E42's blocker: a better score head moves the allocator onto items whose cost is

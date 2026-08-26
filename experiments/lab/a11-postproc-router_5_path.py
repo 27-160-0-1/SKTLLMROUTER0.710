@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """a11 step 5 - the Lagrangian path as an explicit object + verification.
 
 Key structural claim to verify:  a post-hoc repair pass that downgrades items in

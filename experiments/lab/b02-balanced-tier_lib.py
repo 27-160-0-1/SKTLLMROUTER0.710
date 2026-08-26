@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """Shared helpers for the b02 balanced-tier study.
 
 Nothing here writes to the repo except the b02_* caches under reports/lab/.

@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """b06 forest-view: is the oracle partition RECOVERABLE from the prompt?
 
 Script 06 showed that an oracle K-way partition of the true 6-vector, used as a

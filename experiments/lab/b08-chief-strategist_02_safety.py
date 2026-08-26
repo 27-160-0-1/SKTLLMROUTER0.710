@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """b08 - why the bench2 safety argmax fails under C1, and a leak-free rule that does not.
 
 For each tier and each safety on the bench2 grid we report, for BOTH the

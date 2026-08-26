@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """a04 / step 11 -- the project's own judgement harness: 880-item bootstrap EV,
 with and without the targeted runaway-cost guard, at the deployed safety factors
 and on the safety grid.

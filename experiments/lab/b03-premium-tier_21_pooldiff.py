@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """b03 step 21: why does the train-OOF pool say 0% bust where the dev pool says 10-42%?"""
 import sys
 from pathlib import Path

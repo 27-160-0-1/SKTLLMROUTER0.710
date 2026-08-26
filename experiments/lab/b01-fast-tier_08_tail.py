@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
 # SPDX-License-Identifier: Apache-2.0
 
-# SPDX-License-Identifier: Apache-2.0
 """Can the runaway mid-cost items be identified from the prompt, on train alone?
 
 The fast tier's whole headroom is 0.25L; a single runaway mid generation costs
