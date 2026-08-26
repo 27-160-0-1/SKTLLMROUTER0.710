@@ -1,112 +1,147 @@
-301	
-314	==============================================================================
-317	  S1  What is being submitted
-320	==============================================================================
-363	commit  82907b81d763d76bb35e1437bca571279526578c
-414	        Ship the submitted classifier as the image's artifact, and pin line endings
-418	working tree:
-463	?? demo_recording_submission_check.tsv
-526	docker  client 29.6.1 / server 29.6.1 (linux/amd64)
-775	Python 3.14.6
-788	
-788	==============================================================================
-788	  S2  이미지가 실을 학습 산출물
-788	==============================================================================
-901	src\ossp_router\resources\learned-router.v1.json
-901	  sha256  7984081c57f2e9a97725b8378aa2b5a405775079c7ec8eac41874f5c04ec0450
-1504	  safety         {'fast': 0.9, 'balanced': 0.72, 'premium': 0.52}
-1504	  blend weight   0.25
-1504	  prior columns  ['axlight-q6k-v2', 'qwen2.5-14b-q4km', 'ax31-34b-v1', 'r1-distill-qwen-14b']
-1504	  public lookup  2640 entries
-1619	  -> 공개 자료로 미리 만든 조회표와 계수뿐. 실행 중 모델 호출 없음.
-1623	
-1624	==============================================================================
-1625	  S3  공식 빌드 명령 (README.md / docs/RUNTIME.md 원문)
-1625	==============================================================================
-1627	docker build --pull --platform linux/arm64 --file container/Dockerfile --tag my-router:check .
-2490	
-2490	==============================================================================
-2490	  S4  이미지 안에 무엇이 들어갔는가
-2491	==============================================================================
-3345	  uname machine   aarch64
-3346	  in-image sha256 7984081c57f2e9a97725b8378aa2b5a405775079c7ec8eac41874f5c04ec0450
-3346	  -> matches the submitted artifact byte for byte
-3615	
-3615	이미지에 들어간 파일 전체:
-3876	/opt/router/entrypoint.py
-3877	/opt/router/ossp_router/__init__.py
-3878	/opt/router/ossp_router/cli.py
-3879	/opt/router/ossp_router/heuristic.py
-3879	/opt/router/ossp_router/image_evidence.py
-3880	/opt/router/ossp_router/learned_router.py
-3881	/opt/router/ossp_router/legacy_hash_regex.py
-3882	/opt/router/ossp_router/operator_helper.py
-3882	/opt/router/ossp_router/orchestrator.py
-3883	/opt/router/ossp_router/protocol.py
-3883	/opt/router/ossp_router/resources/__init__.py
-3884	/opt/router/ossp_router/resources/hash-regex-public.v1.json
-3884	/opt/router/ossp_router/resources/learned-router.v1.json
-3885	/opt/router/ossp_router/resources/routing-policy.v1.json
-3885	/opt/router/ossp_router/runtime.py
-3886	/opt/router/ossp_router/scoring.py
-3886	/opt/router/ossp_router/similarity.py
-4113	  -> 데이터도, 실험 코드도, 네트워크 의존도 없음
-4114	
+330	
+344	==============================================================================
+344	  S1  What is being submitted
+344	==============================================================================
+358	commit  e8e51e600413caede8f07810e1aa9c2b23c149c6
+405	        Keep the Train-only classifier so the held-out number stays reproducible
+405	working tree:
+444	 M demo_recording_submission_check.tsv
+514	docker  client 29.6.1 / server 29.6.1 (linux/amd64)
+796	Python 3.14.6
+811	
+811	==============================================================================
+811	  S2  이미지가 실을 학습 산출물
+811	==============================================================================
+923	src\ossp_router\resources\learned-router.v1.json
+923	  sha256  7984081c57f2e9a97725b8378aa2b5a405775079c7ec8eac41874f5c04ec0450
+1475	  safety         {'fast': 0.9, 'balanced': 0.72, 'premium': 0.52}
+1475	  blend weight   0.25
+1475	  prior columns  ['axlight-q6k-v2', 'qwen2.5-14b-q4km', 'ax31-34b-v1', 'r1-distill-qwen-14b']
+1484	  public lookup  2640 entries
+1601	  -> 공개 자료로 미리 만든 조회표와 계수뿐. 실행 중 모델 호출 없음.
+1601	
+1602	==============================================================================
+1602	  S3  공식 빌드 명령 (README.md / docs/RUNTIME.md 원문)
+1603	==============================================================================
+1603	docker build --pull --platform linux/arm64 --file container/Dockerfile --tag my-router:check .
+2442	
+2442	==============================================================================
+2443	  S4  이미지 안에 무엇이 들어갔는가
+2444	==============================================================================
+3321	  uname machine   aarch64
+3323	  in-image sha256 7984081c57f2e9a97725b8378aa2b5a405775079c7ec8eac41874f5c04ec0450
+3325	  -> matches the submitted artifact byte for byte
+3612	
+3613	이미지에 들어간 파일 전체:
+3862	/opt/router/entrypoint.py
+3863	/opt/router/ossp_router/__init__.py
+3864	/opt/router/ossp_router/cli.py
+3864	/opt/router/ossp_router/heuristic.py
+3865	/opt/router/ossp_router/image_evidence.py
+3866	/opt/router/ossp_router/learned_router.py
+3867	/opt/router/ossp_router/legacy_hash_regex.py
+3867	/opt/router/ossp_router/operator_helper.py
+3868	/opt/router/ossp_router/orchestrator.py
+3868	/opt/router/ossp_router/protocol.py
+3869	/opt/router/ossp_router/resources/__init__.py
+3870	/opt/router/ossp_router/resources/hash-regex-public.v1.json
+3870	/opt/router/ossp_router/resources/learned-router.v1.json
+3871	/opt/router/ossp_router/resources/routing-policy.v1.json
+3871	/opt/router/ossp_router/runtime.py
+3872	/opt/router/ossp_router/scoring.py
+3872	/opt/router/ossp_router/similarity.py
+4109	  -> 데이터도, 실험 코드도, 네트워크 의존도 없음
+4113	
 4114	==============================================================================
-4115	  S5  접수 전 사전검증 (docs/RUNTIME.md)
-4115	==============================================================================
-4178	platform    linux/arm64
-4368	VOLUME      none -> OK
-4541	user        65532:65532
-4727	entrypoint  ["python3","/opt/router/entrypoint.py"]
-4830	
-4833	==============================================================================
-4833	  S6  공식 검사: tools/check_runtime.py (공개 Train+Dev 2,640문항)
-4833	==============================================================================
-4833	PYTHONPATH=src python3 tools/check_runtime.py --image my-router:check --report build/runtime-check-report.json
-4833	(Windows 에는 fcntl 이 없어 이 도구만 Linux 헬퍼 컨테이너 안에서 실행)
-54339	공개 Train+Dev 입력: 2,640문항, 11,780,297바이트
-54340	입력 SHA-256: 542caab9eb481c7ac5f87f3752db02aabef83d42f2c0962e5557dab0c7a1f04f
-54341	fast: PASS (14.912초 / 90초)
-54341	balanced: PASS (15.554초 / 90초)
-54342	premium: PASS (15.428초 / 90초)
-54343	주의: Docker 서버가 공식 linux/arm64 장비와 같지 않아 실행 시간은 참고값입니다.
-54343	주의: 로컬 검사는 출력 파일을 사후 검증합니다. 공식 평가는 제한된 tmpfs 출력 볼륨과 별도 보안 검사를 추가로 적용합니다.
-54619	
-54619	==============================================================================
-54619	  S7  레지스트리 왕복: 다이제스트로 push, 로컬 삭제, 다이제스트로 pull
-54619	==============================================================================
-55881	sub: digest: sha256:a639d0acd9eb51acda8e9da89d503463b575a3844224682c581ca234631d90fd size: 856
-56052	
-56052	제출 다이제스트  localhost:5000/skt/router@sha256:a639d0acd9eb51acda8e9da89d503463b575a3844224682c581ca234631d90fd
-56245	로컬 이미지를 지우고 다이제스트로만 다시 받는다:
-58664	localhost:5000/skt/router@sha256:a639d0acd9eb51acda8e9da89d503463b575a3844224682c581ca234631d90fd
-58666	
-58666	==============================================================================
-58668	  S8  공식 자원 프로필로 3등급 실행 + 공식 채점기
-58669	==============================================================================
-71378	OK: wrote fast learned-router submission
-71917	   fast       13.2 s   출력 볼륨 파일 1개 (규격: submission.json 하나만)
-84056	OK: wrote balanced learned-router submission
-84550	   balanced   12.6 s   출력 볼륨 파일 1개 (규격: submission.json 하나만)
-96816	OK: wrote premium learned-router submission
-97309	   premium    12.8 s   출력 볼륨 파일 1개 (규격: submission.json 하나만)
-97309	
-97736	OK: 검증 보고서를 demo_io\report.json에 기록했습니다.
-97950	  fast      score=0.694318181818  budget_ratio=1.113715077367  passed=True
-97950	  balanced  score=0.720738636364  budget_ratio=1.432798137502  passed=True
-97950	  premium   score=0.748579545455  budget_ratio=2.086834477024  passed=True
-97950	  FINAL SCORE = 0.718522727273
-97963	
-97964	이 이미지의 산출물은 Train+Dev 로 학습했으므로 위 Dev 점수는 in-sample 이다.
-97964	성능 주장에 쓰는 홀드아웃 수치는 Train 만으로 학습한 산출물의 0.705113636364 이며
-97964	같은 공식 채점기로 별도 측정했다 (demo_reproduce_official.ps1 STEP 4).
-97966	
-97966	==============================================================================
-97966	  S9  기술 제출 정보 파일
-97966	==============================================================================
-97966	python tools/validate_technical_submission.py
-98217	
-98224	제출 순서: 코드 커밋 -> 그 커밋에서 arm64 빌드 -> 공개 레지스트리 push ->
-98224	다이제스트 확인 -> submission-ossp-skt.json 만 추가한 별도 커밋 -> 그 커밋 tree URL 을 보고서에 기재
-98224	
+4114	  S5  접수 전 사전검증 (docs/RUNTIME.md)
+4114	==============================================================================
+4180	platform    linux/arm64
+4352	VOLUME      none -> OK
+4548	user        65532:65532
+4720	entrypoint  ["python3","/opt/router/entrypoint.py"]
+4824	
+4824	==============================================================================
+4824	  S6  공식 검사: tools/check_runtime.py (공개 Train+Dev 2,640문항)
+4824	==============================================================================
+4824	PYTHONPATH=src python3 tools/check_runtime.py --image my-router:check --report build/runtime-check-report.json
+4824	(Windows 에는 fcntl 이 없어 이 도구만 Linux 헬퍼 컨테이너 안에서 실행)
+53989	공개 Train+Dev 입력: 2,640문항, 11,780,297바이트
+53991	입력 SHA-256: 542caab9eb481c7ac5f87f3752db02aabef83d42f2c0962e5557dab0c7a1f04f
+53992	fast: PASS (14.754초 / 90초)
+53993	balanced: PASS (14.604초 / 90초)
+53993	premium: PASS (15.263초 / 90초)
+53994	주의: Docker 서버가 공식 linux/arm64 장비와 같지 않아 실행 시간은 참고값입니다.
+53994	주의: 로컬 검사는 출력 파일을 사후 검증합니다. 공식 평가는 제한된 tmpfs 출력 볼륨과 별도 보안 검사를 추가로 적용합니다.
+54292	
+54292	==============================================================================
+54292	  S7  레지스트리 왕복: 다이제스트로 push, 로컬 삭제, 다이제스트로 pull
+54292	==============================================================================
+55585	sub: digest: sha256:849eae58d08a5a143392284e5ece992fc720412258909efd8b7a9e27424f59da size: 856
+55757	
+55757	제출 다이제스트  localhost:5000/skt/router@sha256:849eae58d08a5a143392284e5ece992fc720412258909efd8b7a9e27424f59da
+55968	로컬 이미지를 지우고 다이제스트로만 다시 받는다:
+58364	localhost:5000/skt/router@sha256:849eae58d08a5a143392284e5ece992fc720412258909efd8b7a9e27424f59da
+58365	
+58366	==============================================================================
+58367	  S8  공식 자원 프로필로 3등급 실행 + 공식 채점기
+58369	==============================================================================
+71108	OK: wrote fast learned-router submission
+71613	   fast       13.2 s   출력 볼륨 파일 1개 (규격: submission.json 하나만)
+84127	OK: wrote balanced learned-router submission
+84658	   balanced   13.0 s   출력 볼륨 파일 1개 (규격: submission.json 하나만)
+97271	OK: wrote premium learned-router submission
+97763	   premium    13.1 s   출력 볼륨 파일 1개 (규격: submission.json 하나만)
+97766	
+98184	OK: 검증 보고서를 demo_io\report.json에 기록했습니다.
+98407	  fast      score=0.694318181818  budget_ratio=1.113715077367  passed=True
+98407	  balanced  score=0.720738636364  budget_ratio=1.432798137502  passed=True
+98407	  premium   score=0.748579545455  budget_ratio=2.086834477024  passed=True
+98407	  FINAL SCORE = 0.718522727273
+98428	
+98428	위 점수는 in-sample 이다. 이 이미지가 싣는 산출물은 Train+Dev 로 학습했고
+98428	방금 채점한 Dev 880문항이 그 학습에 들어가 있다. 예산 통과와 실행 시간 확인용이다.
+98429	성능 주장에 쓰는 홀드아웃 수치는 아래에서 직접 만든다.
+98429	
+98429	==============================================================================
+98429	  S9  홀드아웃 재현: Train 만으로 학습한 산출물로 Dev 880문항 채점
+98429	==============================================================================
+98458	src\ossp_router\resources\learned-router-trainonly.v1.json
+98460	  sha256  3360ba0dbe5243b421b8f977408a57cdd2963c60701341b7dca089e0f35e6f0e
+99001	  public lookup  absent -- Dev 는 학습에 쓰이지 않았고 조회표도 없다
+99001	  safety         {'fast': 0.9, 'balanced': 0.72, 'premium': 0.52}
+99091	
+99091	이 산출물을 실은 이미지를 두 아키텍처로 빌드한다:
+101759	  arm64 / amd64 빌드 완료. 제출 산출물은 원래대로 복구했다.
+101760	
+101761	조회표가 없어 전 문항이 계산 경로다. 에뮬레이션 arm64 는 이 기계에서 약 9배 느리므로
+101762	채점은 amd64 로 한다. 먼저 아키텍처가 선택을 바꾸지 않는지 120문항으로 확인한다:
+101966	  슬라이스: Dev 앞 120문항
+133934	   linux/arm64   32.0 s
+137777	   linux/amd64    3.8 s
+137944	  120개 결정 비교 -- 불일치 0개
+137944	  -> 아키텍처는 라우터의 선택을 바꾸지 않는다
+137960	
+137960	홀드아웃 Dev 880문항, 3등급, 공식 자원 프로필:
+159721	OK: wrote fast learned-router submission
+160029	   fast       22.1 s
+181348	OK: wrote balanced learned-router submission
+181655	   balanced   21.6 s
+203580	OK: wrote premium learned-router submission
+203897	   premium    22.2 s
+203900	
+204319	OK: 검증 보고서를 demo_io\hreport.json에 기록했습니다.
+204553	  fast      score=0.682102272727  budget_ratio=1.117801200202  passed=True
+204553	  balanced  score=0.705397727273  budget_ratio=1.441448844075  passed=True
+204553	  premium   score=0.735511363636  budget_ratio=2.148290683768  passed=True
+204553	  FINAL SCORE = 0.705113636364
+204568	
+204570	이것이 보고서에 쓰는 홀드아웃 수치다. Dev 는 이 산출물의 학습에 쓰이지 않았다.
+204570	
+204571	==============================================================================
+204571	  S10  기술 제출 정보 파일
+204571	==============================================================================
+204571	python tools/validate_technical_submission.py
+204812	
+204812	제출 순서: 코드 커밋 -> 그 커밋에서 arm64 빌드 -> 공개 레지스트리 push ->
+204823	다이제스트 확인 -> submission-ossp-skt.json 만 추가한 별도 커밋 -> 그 커밋 tree URL 을 보고서에 기재
+204823	
