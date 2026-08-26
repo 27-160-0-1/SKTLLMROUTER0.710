@@ -1,0 +1,330 @@
+[
+[
+254,
+""
+],
+[
+277,
+"=============================================================================="
+],
+[
+281,
+"  STEP 0  What is being submitted"
+],
+[
+286,
+"=============================================================================="
+],
+[
+302,
+"commit 3e38664  Reproduce the submitted configuration on camera, not just the 0.7100 build"
+],
+[
+517,
+"evaluated artifact   src/ossp_router/resources/learned-router.v1.json"
+],
+[
+517,
+"  sha256             3360ba0dbe5243b421b8f977408a57cdd2963c60701341b7dca089e0f35e6f0e"
+],
+[
+517,
+"submitted artifact   src/ossp_router/resources/learned-router-submission.v1.json"
+],
+[
+525,
+"  sha256             7984081c57f2e9a97725b8378aa2b5a405775079c7ec8eac41874f5c04ec0450"
+],
+[
+1417,
+"  evaluated  safety={'fast': 0.9, 'balanced': 0.72, 'premium': 0.52}  blend_w=0.25  prior_columns=4  public_lookup=absent"
+],
+[
+1429,
+"  submitted  safety={'fast': 0.9, 'balanced': 0.72, 'premium': 0.52}  blend_w=0.25  prior_columns=4  public_lookup=present"
+],
+[
+1548,
+"  one configuration, two training splits: the evaluated artifact is fitted on"
+],
+[
+1571,
+"  Train only, so Dev in STEP 4 is genuinely held out."
+],
+[
+1584,
+""
+],
+[
+1584,
+"=============================================================================="
+],
+[
+1587,
+"  STEP 1  Build on the official platform: linux/arm64 (docs/RUNTIME.md)"
+],
+[
+1587,
+"=============================================================================="
+],
+[
+18591,
+"platform linux/arm64   image id sha256:f992e0eb09eee711e83f00abe7bf592e8d9a778ecf77ce4d41f5fa8160988983"
+],
+[
+18697,
+""
+],
+[
+18698,
+"verifying inside the arm64 image:"
+],
+[
+25084,
+"  uname machine    aarch64"
+],
+[
+25087,
+"  in-image sha256  7984081c57f2e9a97725b8378aa2b5a405775079c7ec8eac41874f5c04ec0450"
+],
+[
+25089,
+"  safety           {'fast': 0.9, 'balanced': 0.72, 'premium': 0.52}"
+],
+[
+25091,
+"  prior columns    ['axlight-q6k-v2', 'qwen2.5-14b-q4km', 'ax31-34b-v1', 'r1-distill-qwen-14b']"
+],
+[
+25094,
+"  -> matches the submitted artifact byte for byte"
+],
+[
+26045,
+""
+],
+[
+26045,
+"=============================================================================="
+],
+[
+26045,
+"  STEP 2  Official local check: tools/check_runtime.py, public Train+Dev"
+],
+[
+26061,
+"=============================================================================="
+],
+[
+26092,
+"official profile applied by the tool: --platform linux/arm64 --network none"
+],
+[
+26095,
+"  --ipc none --cgroupns private --ulimit core=0:0 --read-only --user 65532:65532"
+],
+[
+26096,
+"  --cap-drop ALL --security-opt no-new-privileges --cpus 2 --memory 2g"
+],
+[
+26099,
+"  --memory-swap 2g --pids-limit 32 --tmpfs /tmp:rw,noexec,nosuid,size=256m"
+],
+[
+26100,
+""
+],
+[
+99746,
+"공개 Train+Dev 입력: 2,640문항, 11,780,297바이트"
+],
+[
+99748,
+"입력 SHA-256: 542caab9eb481c7ac5f87f3752db02aabef83d42f2c0962e5557dab0c7a1f04f"
+],
+[
+99751,
+"fast: PASS (20.978초 / 90초)"
+],
+[
+99755,
+"balanced: PASS (24.917초 / 90초)"
+],
+[
+99756,
+"premium: PASS (20.877초 / 90초)"
+],
+[
+99757,
+"주의: Docker 서버가 공식 linux/arm64 장비와 같지 않아 실행 시간은 참고값입니다."
+],
+[
+99757,
+"주의: 로컬 검사는 출력 파일을 사후 검증합니다. 공식 평가는 제한된 tmpfs 출력 볼륨과 별도 보안 검사를 추가로 적용합니다."
+],
+[
+100056,
+""
+],
+[
+100058,
+"=============================================================================="
+],
+[
+100060,
+"  STEP 3  Same artifact on arm64 and amd64, decision for decision"
+],
+[
+100062,
+"=============================================================================="
+],
+[
+108770,
+"  slice: first 120 Dev episodes, compute path (no lookup)"
+],
+[
+145801,
+"OK: wrote premium learned-router submission"
+],
+[
+146549,
+"   linux/arm64  37.8 s"
+],
+[
+149952,
+"OK: wrote premium learned-router submission"
+],
+[
+150206,
+"   linux/amd64  3.7 s"
+],
+[
+150277,
+"  compared 120 decisions -- mismatches: 0"
+],
+[
+150283,
+"  -> the architecture does not change what the router picks"
+],
+[
+150288,
+""
+],
+[
+150288,
+"=============================================================================="
+],
+[
+150288,
+"  STEP 4  Held-out accuracy with the official scorer (ossp_router.scoring)"
+],
+[
+150298,
+"=============================================================================="
+],
+[
+150317,
+""
+],
+[
+150317,
+">> tier=fast   held-out Dev, 880 episodes, evaluated artifact"
+],
+[
+175057,
+"OK: wrote fast learned-router submission"
+],
+[
+175405,
+"   wall time 25.1 s"
+],
+[
+175407,
+""
+],
+[
+175408,
+">> tier=balanced   held-out Dev, 880 episodes, evaluated artifact"
+],
+[
+201381,
+"OK: wrote balanced learned-router submission"
+],
+[
+201754,
+"   wall time 26.3 s"
+],
+[
+201756,
+""
+],
+[
+201758,
+">> tier=premium   held-out Dev, 880 episodes, evaluated artifact"
+],
+[
+225860,
+"OK: wrote premium learned-router submission"
+],
+[
+226165,
+"   wall time 24.4 s"
+],
+[
+226168,
+""
+],
+[
+226489,
+"split=dev  episodes=880"
+],
+[
+226492,
+"  fast      score=0.682102272727  budget_ratio=1.117801200202  passed=True"
+],
+[
+226492,
+"  balanced  score=0.705397727273  budget_ratio=1.441448844075  passed=True"
+],
+[
+226496,
+"  premium   score=0.735511363636  budget_ratio=2.148290683768  passed=True"
+],
+[
+226500,
+"FINAL SCORE = 0.705113636364"
+],
+[
+226512,
+""
+],
+[
+226515,
+"Expected: FINAL SCORE = 0.705113636364  (weighted 0.4/0.3/0.3, all tiers within budget)"
+],
+[
+226515,
+"Report these: held-out 0.705114, expected 0.7043, zero busts in 3,000 resamples."
+],
+[
+226529,
+""
+],
+[
+226531,
+"The STEP 2 timings are the submitted artifact's lookup-hit path, which is what the"
+],
+[
+226532,
+"public Train+Dev check exercises by definition.  A private batch takes the compute"
+],
+[
+226539,
+"path, measured at 1.31x the single-fit reference (~48 s on the official machine)."
+],
+[
+226542,
+"STEP 2 times are also emulated arm64 on x86; the official run is native."
+]
+]

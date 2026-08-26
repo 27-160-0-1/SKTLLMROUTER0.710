@@ -1,0 +1,97 @@
+{
+  "image": {
+    "platform": "linux/arm64",
+    "requested_reference": "skt-router:arm64-submission",
+    "resolved_local_id": "sha256:f992e0eb09eee711e83f00abe7bf592e8d9a778ecf77ce4d41f5fa8160988983"
+  },
+  "limits": {
+    "cpu_cores": 2,
+    "memory_bytes": 2147483648,
+    "memory_swap_total_bytes": 2147483648,
+    "output_bytes": 4194304,
+    "processes_and_threads_total": 32,
+    "temporary_storage_bytes": 268435456,
+    "wall_time_seconds_per_tier": 90
+  },
+  "passed": true,
+  "report_type": "participant-public-runtime-check",
+  "runtime": {
+    "docker_server_platform": "linux/x86_64",
+    "official_platform": "linux/arm64"
+  },
+  "schema_version": 1,
+  "tiers": [
+    {
+      "elapsed_seconds_max": 20.977815573,
+      "passed": true,
+      "repetitions": [
+        {
+          "detail": "유효한 제출 파일",
+          "elapsed_seconds": 20.977815573,
+          "limit_seconds": 90,
+          "output_bytes": 199799,
+          "output_sha256": "545fb2ac3d22ce1ecf0384e8268032e391b3fa9f5d5b0b159d5dd60ffc147a0a",
+          "passed": true,
+          "repetition": 1,
+          "returncode": 0,
+          "status": "valid",
+          "stderr_tail": "",
+          "timed_out": false
+        }
+      ],
+      "tier": "fast"
+    },
+    {
+      "elapsed_seconds_max": 24.916579381,
+      "passed": true,
+      "repetitions": [
+        {
+          "detail": "유효한 제출 파일",
+          "elapsed_seconds": 24.916579381,
+          "limit_seconds": 90,
+          "output_bytes": 195939,
+          "output_sha256": "26bfe313e953193d929d36242d6c5df83f2c3d75d717253d6288f74c646238d2",
+          "passed": true,
+          "repetition": 1,
+          "returncode": 0,
+          "status": "valid",
+          "stderr_tail": "",
+          "timed_out": false
+        }
+      ],
+      "tier": "balanced"
+    },
+    {
+      "elapsed_seconds_max": 20.877045128,
+      "passed": true,
+      "repetitions": [
+        {
+          "detail": "유효한 제출 파일",
+          "elapsed_seconds": 20.877045128,
+          "limit_seconds": 90,
+          "output_bytes": 195266,
+          "output_sha256": "1d221f342c807a49331d342d0b24447bc0cc0ebc6f1d49edb64868dc349091da",
+          "passed": true,
+          "repetition": 1,
+          "returncode": 0,
+          "status": "valid",
+          "stderr_tail": "",
+          "timed_out": false
+        }
+      ],
+      "tier": "premium"
+    }
+  ],
+  "warnings": [
+    "Docker 서버가 공식 linux/arm64 장비와 같지 않아 실행 시간은 참고값입니다.",
+    "로컬 검사는 출력 파일을 사후 검증합니다. 공식 평가는 제한된 tmpfs 출력 볼륨과 별도 보안 검사를 추가로 적용합니다."
+  ],
+  "workload": {
+    "basis": "materialized-public-train-dev-inputs",
+    "bytes": 11780297,
+    "episodes": 2640,
+    "profile_id": "ossp-2026-public-train-dev-runtime-v1",
+    "represents_evaluation_distribution": false,
+    "sha256": "542caab9eb481c7ac5f87f3752db02aabef83d42f2c0962e5557dab0c7a1f04f"
+  }
+}
