@@ -48,8 +48,14 @@ Copy-Item $artifact $live -Force
 # the artifact's own commit so the image is internally consistent.
 $sim = "src/ossp_router/similarity.py"
 Copy-Item $sim "$sim.demo-backup" -Force
-git show f0b29e3:src/ossp_router/similarity.py | Set-Content $sim -Encoding utf8
-Write-Host "runtime classifier pinned to f0b29e3 (the artifact's own commit)"
+# Byte-exact: piping `git show` through PowerShell decodes with the console codepage and
+# mangles the Korean regex literals in this file.  Redirect inside cmd instead, then verify.
+cmd /c "git show f0b29e3:src/ossp_router/similarity.py > `"$sim`""
+if ($LASTEXITCODE -ne 0) { throw "git show failed" }
+$blobSha = git rev-parse "f0b29e3:src/ossp_router/similarity.py"
+$fileSha = git hash-object $sim
+if ($blobSha -ne $fileSha) { throw "pinned classifier does not match the blob ($fileSha vs $blobSha)" }
+Write-Host "runtime classifier pinned to f0b29e3 (git blob $($blobSha.Substring(0,12)), byte-exact)"
 try {
     docker build -f container/Dockerfile -t skt-router-0710 .
     if ($LASTEXITCODE -ne 0) { throw "docker build failed" }

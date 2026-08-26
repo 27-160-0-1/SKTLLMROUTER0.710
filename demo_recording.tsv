@@ -1,0 +1,54 @@
+365	
+381	==============================================================================
+381	  STEP 0  What is being reproduced
+381	==============================================================================
+450	commit 1615d11  Add an on-camera reproduction script for the 0.7100 build
+667	artifact  src/ossp_router/resources/learned-router-0710.v1.json
+668	sha256    f279218a7f7a02ce32ce75e94d21b6250054b7aebaa28baadd97a60a54bccf9a
+1383	safety    {'fast': 0.94, 'balanced': 0.8, 'premium': 0.73}
+1389	columns   ['axlight-q6k-v2', 'qwen2.5-14b-q4km', 'ax31-34b-v1']
+1519	
+1519	==============================================================================
+1519	  STEP 1  Build the official container with the 0.7100 artifact
+1519	==============================================================================
+1792	runtime classifier pinned to f0b29e3 (git blob 8fd0b91f78ab, byte-exact)
+5605	IMAGE                    ID             DISK USAGE   CONTENT SIZE   EXTRA
+5607	skt-router-0710:latest   532111bbfa6b        127MB         31.8MB        
+5710	
+5710	verifying the artifact inside the image:
+7092	  in-image sha256  f279218a7f7a02ce32ce75e94d21b6250054b7aebaa28baadd97a60a54bccf9a
+7094	  safety           {'fast': 0.94, 'balanced': 0.8, 'premium': 0.73}
+7095	  prior columns    ['axlight-q6k-v2', 'qwen2.5-14b-q4km', 'ax31-34b-v1']
+7096	  public_lookup    absent (full compute path)
+7097	  -> matches the 0.7100 artifact byte for byte
+7487	
+7488	==============================================================================
+7489	  STEP 2  Route held-out Dev (880 episodes) per tier, official resource profile
+7491	==============================================================================
+7506	
+7507	>> tier=fast   (--cpus 2 --memory 2g --network none --read-only --pids-limit 32)
+38570	OK: wrote fast learned-router submission
+38915	   wall time 31.4 s   (official limit: 90 s per tier)
+38916	
+38916	>> tier=balanced   (--cpus 2 --memory 2g --network none --read-only --pids-limit 32)
+70324	OK: wrote balanced learned-router submission
+70674	   wall time 31.8 s   (official limit: 90 s per tier)
+70675	
+70676	>> tier=premium   (--cpus 2 --memory 2g --network none --read-only --pids-limit 32)
+100619	OK: wrote premium learned-router submission
+101013	   wall time 30.3 s   (official limit: 90 s per tier)
+101014	
+101015	==============================================================================
+101017	  STEP 3  Score with the official scorer (ossp_router.scoring)
+101018	==============================================================================
+101455	split=dev  episodes=880
+101456	  fast      score=0.682954545455  budget_ratio=1.13690356911  passed=True
+101457	  balanced  score=0.709659090909  budget_ratio=1.623459130904  passed=True
+101458	  premium   score=0.746306818182  budget_ratio=3.53321011095  passed=True
+101460	FINAL SCORE = 0.709971590909
+101475	
+101475	Expected: FINAL SCORE = 0.709971590909  (weighted 0.4/0.3/0.3, all tiers within budget)
+101476	
+101478	Artifact and runtime are both from commit f0b29e3.  The same artifact against the
+101478	current tree's classifier (E67) scores 0.710198863636 instead - a code pairing, not
+101478	noise; the container's picks match this Windows host on all 2,640 decisions.
