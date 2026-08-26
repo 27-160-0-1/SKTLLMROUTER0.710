@@ -46,6 +46,14 @@ SPDX-License-Identifier: Apache-2.0
   은 SKT 배포물이 아니라 공개 업스트림에서 로컬로 재구성한 매칭 산출물이며, 이미지에는 그
   텍스트가 아닌 수치 결과만 들어간다.
 
+  이 파일은 **저장소에 커밋하지 않는다**. `DATA_LICENSES.md`가 정답(gold answers)을 배포
+  대상에서 제외하고, `data/dev/README.md`도 "AIME 문제문, 정답, 모델 답변은 이 디렉터리에
+  커밋하지 않습니다"라고 못박기 때문이다. `.gitignore`의 `/data/gold/` 규칙이 이를 강제한다.
+  제출 아티팩트 안의 `prior_lookup.provenance.judged_against` 필드가 이 경로를 문자열로
+  가리키지만, 그것은 채점에 무엇을 썼는지 남긴 생성 이력일 뿐 파일 자체를 요구하지 않는다.
+  재현하려면 `tools/match_gold_answers.py`와 `colab-label/judge.py`로 공개 업스트림에서
+  로컬에 다시 만들면 된다.
+
 ## 변환 기록과 SHA-256
 
 라벨(JSONL) → 컬럼(JSON) 변환은 `colab-label/to_prior_labels.py`(컬럼 D는 `--length-only`)와
