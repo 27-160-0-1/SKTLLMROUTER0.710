@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
+# SPDX-License-Identifier: Apache-2.0
+
 """E40: label-preserving text augmentation of the public training set.
 
 Question: if every fold-train episode is augmented with K perturbed copies

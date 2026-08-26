@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
+# SPDX-License-Identifier: Apache-2.0
+
 """E23: kNN representation upgrade using the spare RAM (--variant).
 
 Variants: comp1024 (store 1024 tf-idf components/doc), bins64k (hash space

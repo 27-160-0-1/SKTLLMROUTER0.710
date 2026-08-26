@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
+# SPDX-License-Identifier: Apache-2.0
+
 # SPDX-License-Identifier: Apache-2.0
 """b05 step 13: the same gain heads, but with the blend constants that let the
 gain head actually reach the allocator (gain_alpha 1.0, rank_beta 0.0).

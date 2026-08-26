@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
+# SPDX-License-Identifier: Apache-2.0
+
 # SPDX-License-Identifier: Apache-2.0
 """b08 - (1) the no-bust envelope of today's predictions (is 0.72 reachable at ALL?)
        (2) the oracle ladder on dev (true cost / true score)

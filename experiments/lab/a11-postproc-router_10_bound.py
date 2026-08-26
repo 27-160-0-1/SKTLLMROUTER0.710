@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
+# SPDX-License-Identifier: Apache-2.0
+
 # SPDX-License-Identifier: Apache-2.0
 """a11 step 10 - (i) is the delta-method upper bound calibrated?  (ii) does an
 adaptive bound beat a fixed scalar under distribution shift?  (iii) is the

@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
+# SPDX-License-Identifier: Apache-2.0
+
 """E28: supervised token-presence features for the meta trees.
 
 The meta GBM sees vocabulary only through ridge/kNN scalars, so it cannot

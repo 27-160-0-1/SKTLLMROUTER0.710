@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
+# SPDX-License-Identifier: Apache-2.0
+
 # SPDX-License-Identifier: Apache-2.0
 """b04 - what the memory budget is actually spent on today, and what each
 memory-heavy option would cost.  Everything here is measured, not estimated."""

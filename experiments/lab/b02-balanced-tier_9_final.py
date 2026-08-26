@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
+# SPDX-License-Identifier: Apache-2.0
+
 # SPDX-License-Identifier: Apache-2.0
 """b02 step 9 - which cost column unlocks k1 concentration, the value of the k1
 option, and the shipped balanced policy with its safety curve.

@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
+# SPDX-License-Identifier: Apache-2.0
+
 # SPDX-License-Identifier: Apache-2.0
 """a13 / provider view - part 3: private-set SIZE is a free parameter of the
 safety factor, and the AIME left-over count pins it.

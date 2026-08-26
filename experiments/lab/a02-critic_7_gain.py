@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
+# SPDX-License-Identifier: Apache-2.0
+
 # SPDX-License-Identifier: Apache-2.0
 """a02-critic #7.  Is the mid-vs-light upgrade gain -- the quantity the fast tier
 (weight 0.4) is entirely built on -- even learnable?

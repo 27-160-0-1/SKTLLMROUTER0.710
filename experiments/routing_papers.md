@@ -1,3 +1,8 @@
+<!--
+SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
+SPDX-License-Identifier: Apache-2.0
+-->
+
 # LLM 라우팅 최신 연구 조사 (2025~2026)
 
 조사 배경: SKT Efficient LLM Routing Challenge — 프롬프트만 보고 3개 LLM(소형/중형/추론형) 중 하나를 선택, 배치 비용 예산 제약 하에 평균 품질 최대화. 라벨 2,640개(모델별 성공률+토큰수), 런타임은 **Python 표준 라이브러리 전용**(신경망 배포 불가, 트리/선형/kNN export만 가능). 현재 접근: 해시 n-gram ridge + kNN + GBM 스태킹 + gain 헤드 + Lagrangian 할당 + EV 안전계수(부트스트랩).

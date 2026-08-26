@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
+# SPDX-License-Identifier: Apache-2.0
+
 # SPDX-License-Identifier: Apache-2.0
 """a04 / step 13 -- the control E32/E39 demand: does the targeted tail guard beat
 the global safety scalar, or is it just "spend less" in disguise?

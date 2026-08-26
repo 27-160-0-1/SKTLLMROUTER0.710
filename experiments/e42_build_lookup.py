@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
+# SPDX-License-Identifier: Apache-2.0
+
 """E42 (build-time): side-information lookup tables from the pinned public sources.
 
 Writes experiments/e42_lookup.json:

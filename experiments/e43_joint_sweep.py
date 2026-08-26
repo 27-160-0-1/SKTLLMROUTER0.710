@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
+# SPDX-License-Identifier: Apache-2.0
+
 """E43: joint hyper-parameter sweep of the deployed stack (E27 harness semantics).
 
 The deployed constants (ridge alpha, GBM params, LEGACY_W, FAM_W, CONF_SCALE, GAIN_ALPHA, RANK_BETA,

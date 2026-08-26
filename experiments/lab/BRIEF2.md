@@ -1,3 +1,8 @@
+<!--
+SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
+SPDX-License-Identifier: Apache-2.0
+-->
+
 # LAB BRIEF 2 — corrected facts after the 14-agent analysis round
 
 Read `BRIEF.md` first for the task definition, then this file, which **corrects

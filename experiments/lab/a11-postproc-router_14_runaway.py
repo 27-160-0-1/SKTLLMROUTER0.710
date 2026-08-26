@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
+# SPDX-License-Identifier: Apache-2.0
+
 # SPDX-License-Identifier: Apache-2.0
 """a11 step 14 - context-limit runaways: cost, score, and the value of a perfect
 veto (an upper bound on what a runaway-detector head could be worth)."""

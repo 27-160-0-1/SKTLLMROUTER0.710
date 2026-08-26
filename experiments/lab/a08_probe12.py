@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
+# SPDX-License-Identifier: Apache-2.0
+
 # SPDX-License-Identifier: Apache-2.0
 """a08 probe 12: Korean tokenisation.  learned_router._TOKEN emits a whole Hangul
 run as ONE token, so agglutinated forms ("탐사선의 / 탐사선을 / 탐사선이") are

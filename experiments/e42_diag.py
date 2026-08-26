@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
+# SPDX-License-Identifier: Apache-2.0
+
 """E42 diagnostics: compare dumped OOF predictions of two runs (e.g. none vs parse).
 
 python e42_diag.py reports/e42/preds_none_m0.5_s7.npz reports/e42/preds_parse_m0.5_s7.npz

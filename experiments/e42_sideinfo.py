@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
+# SPDX-License-Identifier: Apache-2.0
+
 """E42: source side-information features for the meta GBM (priority-2 experiment).
 
 Two feature groups from experiments/e42_features.py are appended to the meta-GBM input

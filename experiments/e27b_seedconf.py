@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
+# SPDX-License-Identifier: Apache-2.0
+
 """E27b: seed triangulation (17, 23) of E27 rank-efficiency head.
 
 E27: rank-transformed efficiency heads aligned with the allocator objective.

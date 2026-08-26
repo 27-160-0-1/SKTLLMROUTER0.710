@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
+# SPDX-License-Identifier: Apache-2.0
+
 # SPDX-License-Identifier: Apache-2.0
 """a02-critic #9.  Split the score-side gap into (i) the 9x3 family-mean table
 being wrong and (ii) the within-family item ranking being wrong.

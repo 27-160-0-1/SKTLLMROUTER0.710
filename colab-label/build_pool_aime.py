@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
+# SPDX-License-Identifier: Apache-2.0
+
 # SPDX-License-Identifier: Apache-2.0
 """Render the AIME source pool.  `build_pool.py` has no AIME renderer at all, so the prior
 table covers no AIME item beyond the ones the public split already contains -- and AIME is the

@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
+# SPDX-License-Identifier: Apache-2.0
+
 # SPDX-License-Identifier: Apache-2.0
 """A01: mechanism check -- is a dev item's cost easier to predict when the
 neighbour pool contains the other dev items (the E39/E43b 5-fold-over-combined

@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
+# SPDX-License-Identifier: Apache-2.0
+
 # SPDX-License-Identifier: Apache-2.0
 """A01: bootstrap distribution of the realised budget ratio (premium/balanced),
 honest train-only predictions vs deployed in-sample predictions."""

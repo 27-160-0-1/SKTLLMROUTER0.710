@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
+# SPDX-License-Identifier: Apache-2.0
+
 # SPDX-License-Identifier: Apache-2.0
 """a08 probe 18: tighten the dmmath rescue rule.  "How many"/"Find " are also
 GSM8K/AIME openers, so measure purity and value for several verb lists.

@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
+# SPDX-License-Identifier: Apache-2.0
+
 """E34: IPR-style structure transplanted onto the deployed pipeline.
 
 Source: Sivasubramanian et al., "IPR: Intelligent Prompt Routing with

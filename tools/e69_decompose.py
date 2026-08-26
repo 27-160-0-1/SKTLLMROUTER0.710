@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
+# SPDX-License-Identifier: Apache-2.0
+
 # SPDX-License-Identifier: Apache-2.0
 """E69 step 1 -- decompose the remaining oracle gap into score-error vs cost-error, and
 measure the score heads' calibration (the shrinkage E67 exposed, quantified).

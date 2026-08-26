@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
+# SPDX-License-Identifier: Apache-2.0
+
 """Copy the compiled prior_lookup block from a reference artifact into a freshly built one.
 
 The raw prior labels (local-llm/*.jsonl) are not in the repository, only the compiled table

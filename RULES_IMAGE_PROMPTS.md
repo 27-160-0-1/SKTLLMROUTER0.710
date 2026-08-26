@@ -1,3 +1,8 @@
+<!--
+SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
+SPDX-License-Identifier: Apache-2.0
+-->
+
 # 대회 규칙 이해용 이미지 생성 프롬프트 (SKT Efficient LLM Routing Challenge)
 
 목적: 라우팅 대회의 **규칙 자체**를 그림으로 이해하기. 우리 라우터 구조가 아니라

@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
+# SPDX-License-Identifier: Apache-2.0
+
 """E39b: what do you gain by ACCEPTING budget-bust risk?
 
 For each tier, sweep the safety ratio upward until the nominal bust

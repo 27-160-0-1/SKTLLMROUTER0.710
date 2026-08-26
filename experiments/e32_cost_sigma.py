@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
+# SPDX-License-Identifier: Apache-2.0
+
 """E32: cost-uncertainty inflated allocation (per-episode sigma penalty).
 
 Heteroscedasticity heads regress |inner-OOF log-cost residual|; allocation

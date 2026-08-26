@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
+# SPDX-License-Identifier: Apache-2.0
+
 # SPDX-License-Identifier: Apache-2.0
 """a05 step 4: WHY the wrong model is picked.
 (A) headroom ceiling: is predicted gain calibrated conditional on the predicted

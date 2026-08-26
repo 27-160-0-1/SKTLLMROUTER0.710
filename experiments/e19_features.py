@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
+# SPDX-License-Identifier: Apache-2.0
+
 """E19: char n-gram feature-space sweep for the ridge layer.
 
 Configs vary char hash bins / extraction stride / text limit.  Word block,

@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
+# SPDX-License-Identifier: Apache-2.0
+
 # SPDX-License-Identifier: Apache-2.0
 """A01: why do E39/E43b (5-fold CV over combined 2,640) report far lower bust
 risk than a train-only holdout?  Two candidate causes, both measured."""

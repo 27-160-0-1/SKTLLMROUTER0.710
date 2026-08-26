@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
+# SPDX-License-Identifier: Apache-2.0
+
 # SPDX-License-Identifier: Apache-2.0
 """b03 step 20: risk measured on the DEV pool itself (the a09/a11/a12 convention),
 so my numbers are comparable to round 1, for both fast and premium under legoof."""

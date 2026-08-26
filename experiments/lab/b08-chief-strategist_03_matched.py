@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
+# SPDX-License-Identifier: Apache-2.0
+
 # SPDX-License-Identifier: Apache-2.0
 """b08 - (A) is C1 real at matched risk?  (B) bound the cost-side candidate family.
        (C) resolve b05 P2 vs b06 P2 on the two post-hoc gain constants.

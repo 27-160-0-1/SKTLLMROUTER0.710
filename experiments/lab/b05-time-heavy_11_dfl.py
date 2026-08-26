@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
+# SPDX-License-Identifier: Apache-2.0
+
 # SPDX-License-Identifier: Apache-2.0
 """b05 step 11: (a) a decision-focused surrogate that differentiates the
 allocator's own outcome, and (b) a second stacking layer.

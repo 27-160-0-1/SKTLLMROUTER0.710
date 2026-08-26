@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
+# SPDX-License-Identifier: Apache-2.0
+
 """Oracle ceiling: EV with perfect score/cost knowledge under tier budgets."""
 
 import sys

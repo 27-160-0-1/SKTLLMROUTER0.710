@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
+# SPDX-License-Identifier: Apache-2.0
+
 """E35: pure IPR reproduction (Sivasubramanian et al., arXiv 2509.06274).
 
 Faithful transplant of the paper's recipe, standing alone (no ensemble, no

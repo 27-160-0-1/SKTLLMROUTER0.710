@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
+# SPDX-License-Identifier: Apache-2.0
+
 # SPDX-License-Identifier: Apache-2.0
 """A01 Q4b: decompose the split-half safety-selection optimism into
 (bust rate) x (score when passing), and price the back-off."""

@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
+# SPDX-License-Identifier: Apache-2.0
+
 # SPDX-License-Identifier: Apache-2.0
 """a09: heteroscedastic cost re-transformation - kappa sweep, shape-only, per-column,
    and out-of-sample safety selection."""

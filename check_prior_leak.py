@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
+# SPDX-License-Identifier: Apache-2.0
+
 """Leakage audit of the shipped prior_lookup.
 
 If the table held the organiser's own labels, the prior score would reproduce the true

@@ -1,3 +1,8 @@
+<!--
+SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
+SPDX-License-Identifier: Apache-2.0
+-->
+
 # 새 채팅용 인수인계 프롬프트 (그대로 복사해서 첫 메시지로 붙여넣기)
 
 ---

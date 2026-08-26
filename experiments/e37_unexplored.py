@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
+# SPDX-License-Identifier: Apache-2.0
+
 """E37: three unexplored directions from the design-space map.
 
   MF  matrix factorization (collaborative filtering) over the episode x model

@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
+# SPDX-License-Identifier: Apache-2.0
+
 """E42 side-information features (stdlib only, so they can be ported into ossp_router if they win).
 
 Two groups, both computed from the prompt text alone at runtime:

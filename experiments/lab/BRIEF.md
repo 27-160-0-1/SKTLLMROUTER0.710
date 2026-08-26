@@ -1,3 +1,8 @@
+<!--
+SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
+SPDX-License-Identifier: Apache-2.0
+-->
+
 # LAB BRIEF — shared context for every analysis/design agent
 
 **Goal:** raise the held-out dev final score from **0.7017** to **0.72**

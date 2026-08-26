@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
+# SPDX-License-Identifier: Apache-2.0
+
 """E36b: cost heads on the SPARSE feature space (contrast to E36's dense meta path).
 
 E36 refines the cost heads inside the 58-dim dense meta space.  Here the cost

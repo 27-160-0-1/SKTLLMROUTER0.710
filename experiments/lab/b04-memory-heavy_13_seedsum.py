@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
+# SPDX-License-Identifier: Apache-2.0
+
 # SPDX-License-Identifier: Apache-2.0
 """b04 - summarise the across-fit dispersion measurement into the numbers the
 report needs: bust counts, the safety head-room the fitting noise costs, and the

@@ -1,3 +1,8 @@
+<!--
+SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
+SPDX-License-Identifier: Apache-2.0
+-->
+
 # 프롬프트 라우터 설계 공간 — 이미지 생성 프롬프트 모음
 
 목적: "이 문제를 풀 때 각 단계마다 **어떤 선택지들이 있는가**"를 전부 펼쳐 보는 그림.

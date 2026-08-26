@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
+# SPDX-License-Identifier: Apache-2.0
+
 """E26: sign-decomposed gain heads — P(help)*E[mag|help] - P(hurt)*E[mag|hurt].
 
 Zero-inflated symmetric gain targets shrink a single squared-loss regressor

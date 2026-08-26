@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
+# SPDX-License-Identifier: Apache-2.0
+
 # SPDX-License-Identifier: Apache-2.0
 """A01: re-price the per-tier safety ratio using HONEST (train-only holdout)
 predictions.  E39 priced the same curve with CV / in-sample predictions.

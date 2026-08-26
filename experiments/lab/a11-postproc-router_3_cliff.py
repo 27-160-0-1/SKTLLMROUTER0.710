@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
+# SPDX-License-Identifier: Apache-2.0
+
 # SPDX-License-Identifier: Apache-2.0
 """a11 step 3 - the realised-ratio cliff as a function of the safety scalar,
 and the size of the discrete jumps along the Lagrangian path."""

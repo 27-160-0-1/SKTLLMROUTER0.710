@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
+# SPDX-License-Identifier: Apache-2.0
+
 """E38: external routing methods rebuilt on our data and evaluated head-to-head.
 
 Sources: RouteLLM (lm-sys), LLMRouter (ulab-uiuc, arXiv 2608.06867),

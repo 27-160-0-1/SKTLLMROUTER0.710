@@ -1,3 +1,8 @@
+<!--
+SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
+SPDX-License-Identifier: Apache-2.0
+-->
+
 # A.X-3.1-Light 자체 라벨링 (우선순위 1)
 
 목표: 공개 Train/Dev(2,640)에 없는 **새 문항 + 새 outcome**을 만들어 light 예측기(fast tier의 핵심)에 보조

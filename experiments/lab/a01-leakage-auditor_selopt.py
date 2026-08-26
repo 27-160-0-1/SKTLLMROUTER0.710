@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
+# SPDX-License-Identifier: Apache-2.0
+
 # SPDX-License-Identifier: Apache-2.0
 """A01 Q4: how much score is manufactured by CHOOSING a constant on the same
 880 items you then report?  Split-half selection-optimism measurement on the

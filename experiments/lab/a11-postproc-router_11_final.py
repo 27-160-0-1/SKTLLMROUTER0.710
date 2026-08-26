@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
+# SPDX-License-Identifier: Apache-2.0
+
 # SPDX-License-Identifier: Apache-2.0
 """a11 step 11 - how much of the measured risk rests on a handful of items, and
 what do the recommended constants score (deterministic dev + bootstrap EV)."""

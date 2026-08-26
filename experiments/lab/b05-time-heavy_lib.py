@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
+# SPDX-License-Identifier: Apache-2.0
+
 # SPDX-License-Identifier: Apache-2.0
 """b05 library: an instrumented copy of Lab.fit_predict that also returns the
 58-feature meta matrices, so head-design experiments can be run WITHOUT redoing

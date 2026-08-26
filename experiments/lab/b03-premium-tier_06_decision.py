@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
+# SPDX-License-Identifier: Apache-2.0
+
 # SPDX-License-Identifier: Apache-2.0
 """b03 step 6: the premium decision axis - what does the k1 spend buy, and how good
 is the available 'k1 beats mid' signal?"""

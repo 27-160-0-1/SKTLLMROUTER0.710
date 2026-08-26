@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
+# SPDX-License-Identifier: Apache-2.0
+
 # SPDX-License-Identifier: Apache-2.0
 """a08 probe 13: final repaired classifier (9 buckets, no new family), split
 statistics train vs dev, and the family-mean allocator value of each repair step.

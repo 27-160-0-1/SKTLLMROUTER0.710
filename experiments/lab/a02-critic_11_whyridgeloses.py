@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
+# SPDX-License-Identifier: Apache-2.0
+
 # SPDX-License-Identifier: Apache-2.0
 """a02-critic #11.  The 16,414-dim ridge has strictly BETTER score and cost
 correlations than the deployed stack, and a strictly WORSE final score.  Why?

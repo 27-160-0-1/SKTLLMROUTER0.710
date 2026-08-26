@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
+# SPDX-License-Identifier: Apache-2.0
+
 # SPDX-License-Identifier: Apache-2.0
 """a09: score reliability diagrams, ordinal-reconstruction shape, budget-variance sources."""
 from __future__ import annotations

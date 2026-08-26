@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
+# SPDX-License-Identifier: Apache-2.0
+
 # SPDX-License-Identifier: Apache-2.0
 """b05 step 5: does an encoder representation beat the hashed features ON THE
 GAIN AXIS?  This is the gate for the whole encoder direction (task item 4).

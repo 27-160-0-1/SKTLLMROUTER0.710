@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
+# SPDX-License-Identifier: Apache-2.0
+
 # SPDX-License-Identifier: Apache-2.0
 """b03 step 17: truncation census; runaway probability as a COST correction;
 rescue gate keyed on a dedicated P(mid fails) head."""

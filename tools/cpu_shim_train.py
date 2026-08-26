@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
+# SPDX-License-Identifier: Apache-2.0
+
 """Run tools/train_learned_router_gpu.py with a CPU (scipy) stand-in for the cupy solver.
 
 The GPU path is a centred LSMR with damp=sqrt(alpha); scipy.sparse.linalg.lsmr is the same

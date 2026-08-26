@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
+# SPDX-License-Identifier: Apache-2.0
+
 """E41: self-labelled ax31-light auxiliary data (Colab, skt/A.X-3.1-Light) as extra training rows.
 
 Question: if the light-score / light-cost columns of the ridge (and optionally the two light

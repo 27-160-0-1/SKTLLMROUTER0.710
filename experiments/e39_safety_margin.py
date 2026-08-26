@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
+# SPDX-License-Identifier: Apache-2.0
+
 """E39: safety-margin optimisation for the deployed router.
 
 The safety ratio s_tier scales the allocator's predicted-cost budget

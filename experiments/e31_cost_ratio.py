@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
+# SPDX-License-Identifier: Apache-2.0
+
 """E31: cost targets as ratios + Duan smearing correction.
 
 (a) Cost heads regress log(c0), log(c1/c0), log(c2/c1) so the common

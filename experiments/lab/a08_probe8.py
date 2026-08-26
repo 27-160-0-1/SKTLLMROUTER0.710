@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
+# SPDX-License-Identifier: Apache-2.0
+
 # SPDX-License-Identifier: Apache-2.0
 """a08 probe 8: what are the two sub-sources inside `gsm8k_or_other`, and is any
 other regex family similarly heterogeneous?

@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
+# SPDX-License-Identifier: Apache-2.0
+
 """Cost-error diagnosis: where does the deployed cost prediction go wrong?
 
 Decomposes true cost into input-token and output-token parts, checks how

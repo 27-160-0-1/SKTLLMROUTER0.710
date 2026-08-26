@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
+# SPDX-License-Identifier: Apache-2.0
+
 # SPDX-License-Identifier: Apache-2.0
 """(a) is num_generations predictable?  (b) how exactly can input tokens be predicted?
    (c) rough noise-inflation of the oracle ceiling."""

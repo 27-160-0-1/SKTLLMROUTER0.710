@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
+# SPDX-License-Identifier: Apache-2.0
+
 # SPDX-License-Identifier: Apache-2.0
 """a02-critic #5.  The budget risk is NOT 'broad cost error' -- it is a handful of
 episodes, and the premium bust boundary is one episode wide.

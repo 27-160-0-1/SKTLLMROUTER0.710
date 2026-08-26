@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
+# SPDX-License-Identifier: Apache-2.0
+
 # SPDX-License-Identifier: Apache-2.0
 """a05 step 6: robustness of the label-noise attribution + explicit
 missed-upgrade / wasted-upgrade tables + bootstrap on the one rule that moved."""

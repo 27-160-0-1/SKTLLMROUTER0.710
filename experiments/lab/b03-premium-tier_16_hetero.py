@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
+# SPDX-License-Identifier: Apache-2.0
+
 # SPDX-License-Identifier: Apache-2.0
 """b03 step 16: per-ITEM heteroscedastic cost re-transformation (a09's best premium
 variant) under the honest protocol, plus the E42 selection-bias diagnostic."""

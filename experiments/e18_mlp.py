@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
+# SPDX-License-Identifier: Apache-2.0
+
 """E18: small MLP meta-head vs/with GBM, same nested-CV harness.
 
 MLP(58 -> 64 -> 8) on the meta features, torch CPU (tiny). Evaluated alone

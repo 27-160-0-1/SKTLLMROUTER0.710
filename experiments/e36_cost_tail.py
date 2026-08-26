@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
+# SPDX-License-Identifier: Apache-2.0
+
 """E36: cost-prediction refinement, driven by diag_cost.py findings.
 
 Findings: think cost is 87% output tokens; output length is uncorrelated

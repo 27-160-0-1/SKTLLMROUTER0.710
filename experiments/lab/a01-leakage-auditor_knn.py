@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
+# SPDX-License-Identifier: Apache-2.0
+
 # SPDX-License-Identifier: Apache-2.0
 """A01 Q3: is the meta-GBM's kNN feature distribution-matched between the
 leave-one-out training rows and the runtime (dev) rows?"""

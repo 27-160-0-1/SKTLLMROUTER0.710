@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
+# SPDX-License-Identifier: Apache-2.0
+
 # SPDX-License-Identifier: Apache-2.0
 """E52 - the robust core: C1 (legacy out-of-fold meta features) + seed-averaged
 meta heads, evaluated over several fit rotations rather than one.

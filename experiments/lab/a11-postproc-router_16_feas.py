@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
+# SPDX-License-Identifier: Apache-2.0
+
 # SPDX-License-Identifier: Apache-2.0
 """a11 step 16 - feasibility of a long-output veto: oracle value, false-positive
 cost, and what a PREDICTED-cost veto (available today) actually buys.

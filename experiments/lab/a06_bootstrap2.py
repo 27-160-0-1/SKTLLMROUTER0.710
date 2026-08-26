@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
+# SPDX-License-Identifier: Apache-2.0
+
 # SPDX-License-Identifier: Apache-2.0
 """a06 step 13b: per-tier bootstrap EV / bust curve for baseline vs the
 sub-family correction, so the two can be compared at MATCHED bust risk

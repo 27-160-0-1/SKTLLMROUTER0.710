@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: Copyright 2026 SK TELECOM CO., LTD.
+# SPDX-License-Identifier: Apache-2.0
+
 # SPDX-License-Identifier: Apache-2.0
 """a02-critic #12.  Test proposal P3 directly: price the k1 arm in the BUDGET
 ACCOUNTING at max(pred, family quantile estimated on TRAIN), then re-tune safety.
