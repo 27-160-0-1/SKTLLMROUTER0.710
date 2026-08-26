@@ -1543,3 +1543,35 @@ to LF, and the pitfall matches the data analysis's §7.3-1 CRLF trap.
 Local sanity of the received artifact: dev 0.7185 through the full path with every tier inside
 budget (in-sample — the artifact trains on dev; the performance claim remains the Train-only
 held-out 0.705114 / expected 0.7043).
+
+### E72. On-camera reproduction of the 0.7100 build, and a runtime-pairing finding
+`demo_reproduce_0710.ps1` + `tools/score_submissions.py` reproduce the headline end to end:
+verify the artifact's sha256, build the official container, route Dev's 880 episodes per tier
+under the official resource profile (`--cpus 2 --memory 2g --network none --read-only
+--pids-limit 32 --tmpfs /tmp:256m`), and score the three submissions with `ossp_router.scoring`.
+
+**The artifact is paired with its runtime, and the pairing is worth +0.000227.**  The first
+dry run scored **0.710198863636**, not the recorded 0.709971590909.  The cause is not the
+container and not noise:
+
+* The container's picks match this Windows host on **all 2,640 decisions** (0 disagreements),
+  so cross-platform libm drift is not involved here.
+* The image carries the 0.7100 artifact byte for byte (in-image sha256 `f279218a…`, verified
+  inside the container as a demo step).
+* `src/ossp_router/similarity.py` changed after 0.7100 shipped — E67 rebuilt `classify_family`
+  (91.4 % -> 99.85 %).  The 0.7100 meta GBM was fitted against the *old* family one-hot;
+  feeding it the new labels moves the score.  Restoring `f0b29e3`'s `similarity.py` and
+  re-scoring the same artifact gives exactly **0.709971590909**.
+
+So the demo now pins the classifier to the artifact's own commit for the image build and
+restores the working tree afterwards.  Recorded as a general rule: **an artifact's score is
+only defined together with the feature code that produced its training labels** — a
+feature-extraction change is a silent re-scoring of every existing artifact.
+
+Measured wall time under the official profile: 23.6 / 23.6 / 24.1 s per tier on this laptop
+(2 CPUs), against the 90 s limit — the first direct container timing of this build.
+
+Windows/PowerShell trap worth keeping: `docker build` writes progress to stderr, so
+`$ErrorActionPreference = "Stop"` plus `2>&1` turns the first progress line into a terminating
+NativeCommandError.  The script uses `Continue` and checks `$LASTEXITCODE`, as `deploy_v2.ps1`
+already did.
