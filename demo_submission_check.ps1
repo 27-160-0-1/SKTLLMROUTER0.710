@@ -23,7 +23,8 @@ $OutputEncoding = [Console]::OutputEncoding
 
 $ErrorActionPreference = "Continue"
 $py = if ($env:ROUTER_PY) { $env:ROUTER_PY } else { "python" }
-$SUB_SHA = "7984081c57f2e9a97725b8378aa2b5a405775079c7ec8eac41874f5c04ec0450"
+$SUB_SHA  = "7984081c57f2e9a97725b8378aa2b5a405775079c7ec8eac41874f5c04ec0450"
+$HOLD_SHA = "3360ba0dbe5243b421b8f977408a57cdd2963c60701341b7dca089e0f35e6f0e"
 $REG = "localhost:5000"
 $REPO = "$REG/skt/router"
 
@@ -139,11 +140,95 @@ for t in ('fast', 'balanced', 'premium'):
 print('  FINAL SCORE = %s' % r['final_score'])
 "@
 Write-Host ""
-Write-Host "이 이미지의 산출물은 Train+Dev 로 학습했으므로 위 Dev 점수는 in-sample 이다." -ForegroundColor DarkGray
-Write-Host "성능 주장에 쓰는 홀드아웃 수치는 Train 만으로 학습한 산출물의 0.705113636364 이며" -ForegroundColor DarkGray
-Write-Host "같은 공식 채점기로 별도 측정했다 (demo_reproduce_official.ps1 STEP 4)." -ForegroundColor DarkGray
+Write-Host "위 점수는 in-sample 이다. 이 이미지가 싣는 산출물은 Train+Dev 로 학습했고" -ForegroundColor DarkGray
+Write-Host "방금 채점한 Dev 880문항이 그 학습에 들어가 있다. 예산 통과와 실행 시간 확인용이다." -ForegroundColor DarkGray
+Write-Host "성능 주장에 쓰는 홀드아웃 수치는 아래에서 직접 만든다." -ForegroundColor DarkGray
 
-Banner "S9  기술 제출 정보 파일"
+Banner "S9  홀드아웃 재현: Train 만으로 학습한 산출물로 Dev 880문항 채점"
+$hold = "src\ossp_router\resources\learned-router-trainonly.v1.json"
+$hh = (Get-FileHash $hold -Algorithm SHA256).Hash.ToLower()
+Write-Host "$hold"
+Write-Host "  sha256  $hh"
+if ($hh -ne $HOLD_SHA) { throw "홀드아웃 산출물 해시 불일치" }
+& $py -X utf8 -c @"
+import json
+a = json.load(open('src/ossp_router/resources/learned-router-trainonly.v1.json', encoding='utf-8'))
+print('  public lookup ', 'present' if a.get('public_lookup') else 'absent -- Dev 는 학습에 쓰이지 않았고 조회표도 없다')
+print('  safety        ', a['tier_safety_ratios'])
+"@
+Write-Host ""
+Write-Host "이 산출물을 실은 이미지를 두 아키텍처로 빌드한다:" -ForegroundColor Yellow
+Copy-Item $live "$live.holdout-backup" -Force
+Copy-Item $hold $live -Force
+try {
+    docker build --platform linux/arm64 --provenance=false --sbom=false -q -f container/Dockerfile -t holdout:arm64 . | Out-Null
+    if ($LASTEXITCODE -ne 0) { throw "arm64 holdout build 실패" }
+    docker build --platform linux/amd64 --provenance=false --sbom=false -q -f container/Dockerfile -t holdout:amd64 . | Out-Null
+    if ($LASTEXITCODE -ne 0) { throw "amd64 holdout build 실패" }
+} finally {
+    Move-Item "$live.holdout-backup" $live -Force
+}
+Write-Host "  arm64 / amd64 빌드 완료. 제출 산출물은 원래대로 복구했다." -ForegroundColor DarkGray
+
+Write-Host ""
+Write-Host "조회표가 없어 전 문항이 계산 경로다. 에뮬레이션 arm64 는 이 기계에서 약 9배 느리므로" -ForegroundColor DarkGray
+Write-Host "채점은 amd64 로 한다. 먼저 아키텍처가 선택을 바꾸지 않는지 120문항으로 확인한다:" -ForegroundColor Yellow
+New-Item -ItemType Directory -Force demo_io\xin, demo_io\xarm64, demo_io\xamd64 | Out-Null
+& $py -X utf8 -c @"
+import json, pathlib
+d = json.load(open('data/materialized/dev/inputs.json', encoding='utf-8'))
+d['episodes'] = d['episodes'][:120]
+pathlib.Path('demo_io/xin/inputs.json').write_text(json.dumps(d, ensure_ascii=False), encoding='utf-8')
+print('  슬라이스: Dev 앞 %d문항' % len(d['episodes']))
+"@
+$xin = (Resolve-Path demo_io\xin).Path
+foreach ($a in @("arm64","amd64")) {
+    $xout = (Resolve-Path "demo_io\x$a").Path
+    $s = Get-Date
+    docker run --rm --platform "linux/$a" --network none --read-only --cpus 2 --memory 2g --memory-swap 2g --pids-limit 32 --tmpfs /tmp:rw,size=256m -v "${xin}:/challenge/input:ro" -v "${xout}:/challenge/output" "holdout:$a" --input /challenge/input/inputs.json --tier premium --output /challenge/output/submission.json | Out-Null
+    if ($LASTEXITCODE -ne 0) { throw "cross-arch 실행 실패 ($a)" }
+    Write-Host ("   linux/{0,-6} {1,5:n1} s" -f $a, ((Get-Date)-$s).TotalSeconds)
+}
+& $py -X utf8 -c @"
+import json
+def picks(p):
+    return {d['episode_id']: d['model_id'] for d in json.load(open(p, encoding='utf-8'))['decisions']}
+a = picks('demo_io/xarm64/submission.json')
+b = picks('demo_io/xamd64/submission.json')
+bad = [e for e in a if a[e] != b[e]]
+print('  %d개 결정 비교 -- 불일치 %d개' % (len(a), len(bad)))
+assert not bad
+print('  -> 아키텍처는 라우터의 선택을 바꾸지 않는다')
+"@
+if ($LASTEXITCODE -ne 0) { throw "cross-arch 비교 실패" }
+
+Write-Host ""
+Write-Host "홀드아웃 Dev 880문항, 3등급, 공식 자원 프로필:" -ForegroundColor Yellow
+New-Item -ItemType Directory -Force demo_io\hscore | Out-Null
+foreach ($t in @("fast","balanced","premium")) {
+    New-Item -ItemType Directory -Force "demo_io\hout\$t" | Out-Null
+    $ho = (Resolve-Path "demo_io\hout\$t").Path
+    $s = Get-Date
+    docker run --rm --platform linux/amd64 --network none --read-only --user 65532:65532 --cap-drop ALL --security-opt no-new-privileges --cpus 2 --memory 2g --memory-swap 2g --pids-limit 32 --tmpfs /tmp:rw,size=256m -v "${inDir}:/challenge/input:ro" -v "${ho}:/challenge/output" holdout:amd64 --input /challenge/input/inputs.json --tier $t --output /challenge/output/submission.json
+    if ($LASTEXITCODE -ne 0) { throw "홀드아웃 $t 실행 실패" }
+    Write-Host ("   {0,-9} {1,5:n1} s" -f $t, ((Get-Date)-$s).TotalSeconds)
+    Copy-Item "demo_io\hout\$t\submission.json" "demo_io\hscore\$t.json" -Force
+}
+Write-Host ""
+& $py -X utf8 -m ossp_router.cli self-check --input data/materialized/dev/inputs.json --outcomes data/dev/outcomes.json --submissions demo_io/hscore --report demo_io/hreport.json
+if ($LASTEXITCODE -ne 0) { throw "홀드아웃 채점 실패" }
+& $py -X utf8 -c @"
+import json
+r = json.load(open('demo_io/hreport.json', encoding='utf-8'))
+for t in ('fast', 'balanced', 'premium'):
+    x = r['tiers'][t]
+    print('  %-9s score=%s  budget_ratio=%s  passed=%s' % (t, x['tier_score'], x['budget_ratio'], x['budget_passed']))
+print('  FINAL SCORE = %s' % r['final_score'])
+"@
+Write-Host ""
+Write-Host "이것이 보고서에 쓰는 홀드아웃 수치다. Dev 는 이 산출물의 학습에 쓰이지 않았다." -ForegroundColor Green
+
+Banner "S10  기술 제출 정보 파일"
 Write-Host "python tools/validate_technical_submission.py" -ForegroundColor Yellow
 & $py tools\validate_technical_submission.py
 Write-Host ""
