@@ -1,0 +1,81 @@
+560	
+581	==============================================================================
+583	  STEP 0  What is being reproduced
+584	==============================================================================
+658	commit 79d11b8  Pin the demo's classifier byte-exactly and record the run
+885	evaluated artifact   src/ossp_router/resources/learned-router.v1.json
+887	  sha256             3360ba0dbe5243b421b8f977408a57cdd2963c60701341b7dca089e0f35e6f0e
+887	submitted artifact   src/ossp_router/resources/learned-router-submission.v1.json
+888	  sha256             7984081c57f2e9a97725b8378aa2b5a405775079c7ec8eac41874f5c04ec0450
+890	
+892	the two share one configuration; they differ only in training split:
+1979	  evaluated  safety={'fast': 0.9, 'balanced': 0.72, 'premium': 0.52}  blend_w=0.25  prior_columns=4  public_lookup=absent
+1982	  submitted  safety={'fast': 0.9, 'balanced': 0.72, 'premium': 0.52}  blend_w=0.25  prior_columns=4  public_lookup=present
+2123	
+2123	  The evaluated artifact is fitted on Train only, so Dev below is genuinely held out.
+2129	  The submitted artifact adds Dev to its training set (per the challenge's deploy
+2129	  rule), which makes its own Dev score in-sample -- it is exercised in STEP 4 for
+2129	  feasibility, never quoted for accuracy.
+2129	
+2129	==============================================================================
+2129	  STEP 1  Build the official container
+2133	==============================================================================
+12372	IMAGE                    ID             DISK USAGE   CONTENT SIZE   EXTRA
+12373	skt-router-eval:latest   cf1f18e70229        126MB         30.9MB        
+12478	
+12480	verifying the artifact inside the image:
+13543	  in-image sha256  3360ba0dbe5243b421b8f977408a57cdd2963c60701341b7dca089e0f35e6f0e
+13546	  safety           {'fast': 0.9, 'balanced': 0.72, 'premium': 0.52}
+13548	  blend weight     0.25
+13549	  prior columns    ['axlight-q6k-v2', 'qwen2.5-14b-q4km', 'ax31-34b-v1', 'r1-distill-qwen-14b']
+13550	  public_lookup    absent (full compute path)
+13551	  -> matches the evaluated artifact byte for byte
+13943	
+13944	==============================================================================
+13946	  STEP 2  Route held-out Dev (880 episodes) per tier, official resource profile
+13950	==============================================================================
+13969	
+13970	>> tier=fast   (--cpus 2 --memory 2g --network none --read-only --pids-limit 32)
+39574	OK: wrote fast learned-router submission
+39916	   wall time 25.9 s   (official limit: 90 s per tier)
+39916	
+39916	>> tier=balanced   (--cpus 2 --memory 2g --network none --read-only --pids-limit 32)
+64342	OK: wrote balanced learned-router submission
+64684	   wall time 24.8 s   (official limit: 90 s per tier)
+64685	
+64687	>> tier=premium   (--cpus 2 --memory 2g --network none --read-only --pids-limit 32)
+89582	OK: wrote premium learned-router submission
+89915	   wall time 25.2 s   (official limit: 90 s per tier)
+89915	
+89916	==============================================================================
+89916	  STEP 3  Score with the official scorer (ossp_router.scoring)
+89917	==============================================================================
+90240	split=dev  episodes=880
+90240	  fast      score=0.682102272727  budget_ratio=1.117801200202  passed=True
+90240	  balanced  score=0.705397727273  budget_ratio=1.441448844075  passed=True
+90240	  premium   score=0.735511363636  budget_ratio=2.148290683768  passed=True
+90240	FINAL SCORE = 0.705113636364
+90257	
+90257	Expected: FINAL SCORE = 0.705113636364  (weighted 0.4/0.3/0.3, all tiers within budget)
+90257	Budget headroom: fast 1.118/1.25, balanced 1.441/2.00, premium 2.148/4.00.
+90257	This triple was priced for zero busts in 3,000 resamples across three scenarios.
+90257	
+90257	==============================================================================
+90265	  STEP 4  The artifact actually being submitted runs in the same box
+90265	==============================================================================
+94260	sha256:234c608f8f29319f939261873db8d722195e78ec70fdec6960e92e828d89270b
+94747	  in-image sha256  7984081c57f2e9a97725b8378aa2b5a405775079c7ec8eac41874f5c04ec0450
+94749	  -> matches the submitted artifact byte for byte
+94976	
+94976	>> tier=premium  (the tightest tier), submission artifact
+96551	OK: wrote premium learned-router submission
+96747	   wall time 1.8 s   (official limit: 90 s per tier)
+96980	  tier=premium  budget_ratio=2.086834477024  limit=4  passed=True
+96980	  (accuracy deliberately not reported -- see the tool's docstring)
+96986	
+96996	STEP 4 is a feasibility check, not an accuracy claim: this artifact was fitted on
+96996	Train+Dev, so its Dev score is in-sample and is deliberately not printed.  Its Dev
+96996	run also hits the bundled lookup table, so the wall time above is the hit path; the
+96996	miss path measured 1.31x the single-fit reference (~48 s on the official machine).
+96996	
+97000	Quote for accuracy: held-out 0.705114, expected 0.7043, zero busts.

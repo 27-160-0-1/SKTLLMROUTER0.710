@@ -8,15 +8,24 @@
 # All of the child's streams are merged inside the child (*>&1) so a single reader cannot
 # deadlock on an undrained stderr pipe.
 
+param(
+    [string]$Script = "demo_reproduce_0710.ps1",
+    [string]$Out
+)
+
 $ErrorActionPreference = "Continue"
 $root = Split-Path -Parent $PSScriptRoot
 Set-Location $root
-$out = Join-Path $root "demo_recording.tsv"
+if (-not $Out) {
+    $Out = [System.IO.Path]::GetFileNameWithoutExtension($Script) -replace '^demo_reproduce_', 'demo_recording_'
+    $Out = "$Out.tsv"
+}
+$out = Join-Path $root $Out
 Remove-Item $out -ErrorAction SilentlyContinue
 
 $psi = New-Object System.Diagnostics.ProcessStartInfo
 $psi.FileName = "powershell"
-$psi.Arguments = '-NoProfile -ExecutionPolicy Bypass -Command "& { .\demo_reproduce_0710.ps1 *>&1 }"'
+$psi.Arguments = "-NoProfile -ExecutionPolicy Bypass -Command `"& { .\$Script *>&1 }`""
 $psi.WorkingDirectory = $root
 $psi.RedirectStandardOutput = $true
 $psi.UseShellExecute = $false
